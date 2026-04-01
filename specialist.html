@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Специалисты клиники | Реамед</title>
+    <!-- Font Awesome 6 (Free) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Google Fonts: Inter + Fallback -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background-color: #ffffff;
+        color: #1e293b;
+        line-height: 1.5;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* ========== ВЕРХНЯЯ ПЛАШКА ========== */
+      .top-bar {
+        background-color: #f8fafc;
+        border-bottom: 1px solid #e9eef3;
+        font-size: 14px;
+        padding: 10px 0;
+      }
+
+      .top-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .top-contacts {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .top-contacts a,
+      .top-contacts span {
+        color: #334155;
+        text-decoration: none;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .top-contacts a:hover {
+        color: #1e4a8a;
+      }
+
+      .social-icons a {
+        color: #334155;
+        font-size: 18px;
+        transition: color 0.2s;
+      }
+      .social-icons a:hover {
+        color: #1e4a8a;
+      }
+
+      /* ========== ОСНОВНОЙ ХЕДЕР ========== */
+      .main-header {
+        background: white;
+        padding: 20px 0;
+        border-bottom: 1px solid #eef2f6;
+      }
+
+      .main-header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+
+      .logo img {
+        display: block;
+        height: 44px;
+        width: auto;
+      }
+
+      .header-contacts {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+
+      .contact-block {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .contact-block i {
+        font-size: 28px;
+        color: #1e4a8a;
+      }
+
+      .contact-info .label {
+        font-size: 13px;
+        color: #5b6e8c;
+        letter-spacing: 0.3px;
+      }
+
+      .contact-info a {
+        font-weight: 700;
+        font-size: 18px;
+        color: #0f2b4d;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .contact-info a:hover {
+        color: #2563eb;
+      }
+
+      /* ========== НАВИГАЦИЯ ========== */
+      .nav-menu {
+        background: white;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 1px 6px rgba(0, 0, 0, 0.02);
+        border-bottom: 1px solid #eef2f6;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(2px);
+        background-color: rgba(255, 255, 255, 0.98);
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        gap: 8px;
+        padding: 0;
+        margin: 0;
+      }
+
+      .nav-links li a {
+        display: inline-block;
+        padding: 16px 12px;
+        font-weight: 500;
+        font-size: 15px;
+        color: #1e2f44;
+        text-decoration: none;
+        transition: all 0.2s;
+        border-radius: 8px;
+      }
+
+      .nav-links li.active a,
+      .nav-links li a:hover {
+        color: #1e4a8a;
+        background-color: #f0f4fe;
+      }
+
+      .btn-online {
+        background: linear-gradient(105deg, #1e4a8a 0%, #2563eb 100%);
+        color: white !important;
+        padding: 8px 16px !important;
+        border-radius: 40px !important;
+        font-weight: 600 !important;
+        margin-left: 12px;
+        transition: transform 0.1s, box-shadow 0.2s;
+        box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+        margin-top: 8px;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .btn-online i {
+        margin-right: 8px;
+      }
+
+      .btn-online:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+        background: linear-gradient(105deg, #1e4a8a, #2b6ef0);
+      }
+
+      /* ========== ХЛЕБНЫЕ КРОШКИ ========== */
+      .breadcrumbs {
+        padding: 28px 0 16px;
+        font-size: 14px;
+        color: #5f6c84;
+      }
+      .breadcrumbs a {
+        color: #2563eb;
+        text-decoration: none;
+      }
+      .breadcrumbs span {
+        margin: 0 6px;
+      }
+
+      /* ========== ОСНОВНОЙ КОНТЕНТ ========== */
+      .specialists-section {
+        padding: 16px 0 64px;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 24px;
+        color: #0f2b4d;
+        letter-spacing: -0.3px;
+      }
+
+      /* фильтр */
+      .filter-bar {
+        margin-bottom: 48px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        border-bottom: 1px solid #eef2f6;
+        padding-bottom: 16px;
+      }
+
+      .filter-label {
+        font-weight: 600;
+        color: #2c3e5c;
+        font-size: 0.9rem;
+      }
+
+      .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .filter-btn {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        padding: 8px 20px;
+        border-radius: 40px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #2c3e5c;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .filter-btn.active {
+        background: #1e4a8a;
+        border-color: #1e4a8a;
+        color: white;
+        box-shadow: 0 4px 8px rgba(30, 74, 138, 0.12);
+      }
+
+      .filter-btn:hover:not(.active) {
+        background: #eef2ff;
+        border-color: #b9d0f0;
+      }
+
+      /* сетка карточек */
+      .doctors-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 32px;
+      }
+
+      /* карточка специалиста */
+      .doctor-card {
+        background: #ffffff;
+        border-radius: 28px;
+        box-shadow: 0 8px 26px rgba(0, 0, 0, 0.03),
+          0 1px 2px rgba(0, 0, 0, 0.05);
+        transition: all 0.25s ease;
+        border: 1px solid #eef2fa;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .doctor-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+        border-color: #dce5f2;
+      }
+
+      .card-img {
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        background: #f1f5f9;
+      }
+
+      .card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .doctor-card:hover .card-img img {
+        transform: scale(1.02);
+      }
+
+      .card-content {
+        padding: 24px 24px 28px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .doctor-name {
+        font-size: 1.45rem;
+        font-weight: 700;
+        color: #0f2b4d;
+        line-height: 1.3;
+        margin-bottom: 8px;
+      }
+
+      .doctor-specialty {
+        font-size: 0.9rem;
+        color: #2e6ab0;
+        background: #eef4ff;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 30px;
+        margin-bottom: 18px;
+        font-weight: 500;
+        width: fit-content;
+      }
+
+      .doctor-location {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.85rem;
+        color: #5b6e8c;
+        margin-bottom: 16px;
+      }
+
+      .doctor-location i {
+        font-size: 14px;
+        color: #3b7bc9;
+      }
+
+      .price-badge {
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: #1e4a8a;
+        margin: 12px 0 18px;
+        background: #f8fcff;
+        padding: 6px 0;
+        border-top: 1px dashed #e2edf7;
+        border-bottom: 1px dashed #e2edf7;
+      }
+
+      .btn-appoint {
+        background: #1e4a8a;
+        border: none;
+        border-radius: 40px;
+        padding: 12px 20px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: all 0.2s;
+        width: 100%;
+        margin-top: 8px;
+        text-decoration: none;
+        font-family: inherit;
+      }
+
+      .btn-appoint i {
+        font-size: 1rem;
+      }
+
+      .btn-appoint:hover {
+        background: #2563eb;
+        transform: scale(0.98);
+        box-shadow: 0 6px 14px rgba(30, 74, 138, 0.2);
+      }
+
+      /* ========== МОДАЛЬНОЕ ОКНО ========== */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(15, 23, 42, 0.75);
+        backdrop-filter: blur(6px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0.3s ease, opacity 0.3s ease;
+      }
+
+      .modal-overlay.active {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .modal-container {
+        background: #ffffff;
+        max-width: 500px;
+        width: 90%;
+        border-radius: 40px;
+        box-shadow: 0 35px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
+        overflow: hidden;
+        transform: scale(0.96);
+        transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      }
+
+      .modal-overlay.active .modal-container {
+        transform: scale(1);
+      }
+
+      .modal-header {
+        background: linear-gradient(105deg, #1e4a8a, #2563eb);
+        padding: 28px 28px 20px;
+        color: white;
+        position: relative;
+      }
+      .modal-header h3 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        letter-spacing: -0.3px;
+      }
+      .modal-header p {
+        font-size: 15px;
+        opacity: 0.85;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        word-break: break-word;
+      }
+      .modal-close {
+        position: absolute;
+        right: 24px;
+        top: 24px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 60px;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 20px;
+        color: white;
+      }
+      .modal-close:hover {
+        background: rgba(255, 255, 255, 0.35);
+        transform: rotate(90deg);
+      }
+
+      .modal-body {
+        padding: 28px 28px 36px;
+      }
+      .form-group {
+        margin-bottom: 24px;
+      }
+      .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #1e2f44;
+        font-size: 14px;
+      }
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 14px 18px;
+        border-radius: 28px;
+        border: 1.5px solid #e2e8f0;
+        font-size: 16px;
+        transition: all 0.2s;
+        background: #fefefe;
+        font-family: inherit;
+      }
+      .form-group input:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+      }
+      .modal-submit {
+        background: linear-gradient(105deg, #1e4a8a, #2563eb);
+        border: none;
+        width: 100%;
+        padding: 16px;
+        border-radius: 44px;
+        font-weight: 700;
+        font-size: 18px;
+        color: white;
+        cursor: pointer;
+        transition: 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+      }
+      .modal-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(37, 99, 235, 0.4);
+      }
+      .modal-footer-note {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #5b6e8c;
+        text-align: center;
+      }
+
+      /* футер */
+      .footer {
+        background: #0f172a;
+        color: #cbd5e1;
+        padding: 48px 0 32px;
+        margin-top: 40px;
+      }
+      .footer-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 48px;
+        justify-content: space-between;
+      }
+      .footer-col {
+        flex: 1;
+        min-width: 200px;
+      }
+      .footer-col h4 {
+        color: white;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+      }
+      .footer-links {
+        list-style: none;
+      }
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+      .footer-links a {
+        color: #94a3b8;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-links a:hover {
+        color: white;
+      }
+      .copyright {
+        text-align: center;
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid #1e293b;
+        font-size: 0.8rem;
+      }
+
+      /* адаптив */
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 20px;
+        }
+        .header-contacts {
+          width: 100%;
+          justify-content: space-between;
+        }
+        .nav-links {
+          overflow-x: auto;
+          flex-wrap: nowrap;
+          padding-bottom: 4px;
+        }
+        .nav-links li a {
+          white-space: nowrap;
+          padding: 12px 10px;
+        }
+        .doctors-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .filter-bar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .filter-buttons {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          width: 100%;
+          padding-bottom: 8px;
+        }
+        .section-title {
+          font-size: 1.8rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .doctor-name {
+          font-size: 1.3rem;
+        }
+        .price-badge {
+          font-size: 1.2rem;
+        }
+      }
+
+      .doctor-card {
+        opacity: 0;
+        animation: fadeUp 0.4s ease forwards;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Верхняя плашка -->
+    <div class="top-bar">
+      <div class="container">
+        <div class="top-contacts">
+          <a href="mailto:info@reamedalmet.ru"
+            ><i class="far fa-envelope"></i> info@reamedalmet.ru</a
+          >
+          <span><i class="far fa-clock"></i> Ежедневно с 8:00 до 20:00</span>
+        </div>
+        <div class="social-icons">
+          <a href="https://vk.com/reamedalmet" target="_blank"
+            ><i class="fab fa-vk"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Основной хедер -->
+    <header class="main-header">
+      <div class="container">
+        <a href="/" class="logo">
+          <img
+            src="https://reamedalmet.ru/wp-content/uploads/2023/11/logo-1.png"
+            alt="Реамед"
+            width="168"
+            height="44"
+          />
+        </a>
+        <div class="header-contacts">
+          <div class="contact-block">
+            <i class="fas fa-phone-alt"></i>
+            <div class="contact-info">
+              <div class="label">Прием врачей / Медосмотры</div>
+              <a href="tel:+78553399939">+7 (8553) 39-99-39</a>
+            </div>
+          </div>
+          <div class="contact-block">
+            <i class="fas fa-stethoscope"></i>
+            <div class="contact-info">
+              <div class="label">Наркология</div>
+              <a href="tel:+78553440404">+7 (8553) 44-04-04</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Навигация -->
+    <div class="nav-menu">
+      <div class="container">
+        <ul class="nav-links">
+          <li><a href="./index.html">Главная</a></li>
+          <li class="active"><a href="./specialist.html">Специалисты</a></li>
+          <li><a href="./uslugi.html">Услуги</a></li>
+          <li><a href="./contact.html">Контакты</a></li>
+          <li><a href="./vacancy2.html">Вакансии</a></li>
+          <li>
+            <a href="#" class="btn-online" id="onlineAppointmentBtn"
+              ><i class="fas fa-calendar-check"></i> Онлайн-запись</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Основной блок: специалисты -->
+    <main>
+      <div class="container">
+        <div class="specialists-section">
+          <h1 class="section-title">Врачи клиники «Реамед»</h1>
+
+          <!-- фильтр по специализациям -->
+          <div class="filter-bar">
+            <div class="filter-label">Направление:</div>
+            <div class="filter-buttons" id="filterButtons">
+              <button class="filter-btn active" data-filter="all">
+                Все специалисты
+              </button>
+              <button class="filter-btn" data-filter="terapiya">
+                Терапевты
+              </button>
+              <button class="filter-btn" data-filter="nevrologiya">
+                Неврологи
+              </button>
+              <button class="filter-btn" data-filter="kardiologiya">
+                Кардиологи
+              </button>
+              <button class="filter-btn" data-filter="ginekologiya">
+                Гинекологи
+              </button>
+              <button class="filter-btn" data-filter="hirurgiya">
+                Хирургия
+              </button>
+              <button class="filter-btn" data-filter="uzi">
+                УЗИ-диагносты
+              </button>
+              <button class="filter-btn" data-filter="endokrinologiya">
+                Эндокринологи
+              </button>
+            </div>
+          </div>
+
+          <!-- сетка специалистов -->
+          <div class="doctors-grid" id="doctorsGrid"></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>ООО «Реамед»</h4>
+            <p>Лицензия Л041-01181-16/00344835 от 07.09.2020</p>
+            <p><i class="fas fa-phone-alt"></i> +7 (8553) 39-99-39</p>
+            <p><i class="far fa-envelope"></i> info@reamedalmet.ru</p>
+          </div>
+          <div class="footer-col">
+            <h4>Пациентам</h4>
+            <ul class="footer-links">
+              <li><a href="./oferta.html">Договор оферты</a></li>
+              <li><a href="./policy.html">Политика обработки данных</a></li>
+              <li><a href="./nalog.html">Налоговый вычет</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          2025 © ООО «Реамед». Все права защищены. Информация на сайте не
+          является публичной офертой.
+        </div>
+      </div>
+    </footer>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div class="modal-overlay" id="appointmentModal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <div class="modal-close" id="closeModalBtn"><i class="fas fa-times"></i></div>
+          <h3><i class="fas fa-calendar-check"></i> Запись на приём</h3>
+          <p><i class="fas fa-stethoscope"></i> <span id="modalServiceName">Запись к специалисту</span></p>
+        </div>
+        <div class="modal-body">
+          <form id="modalForm">
+            <div class="form-group">
+              <label>Ваше имя *</label>
+              <input type="text" id="userName" placeholder="Иван Иванов" required>
+            </div>
+            <div class="form-group">
+              <label>Телефон *</label>
+              <input type="tel" id="userPhone" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            <div class="form-group">
+              <label>Желаемая дата</label>
+              <input type="date" id="userDate">
+            </div>
+            <button type="submit" class="modal-submit">Отправить заявку <i class="fas fa-paper-plane"></i></button>
+            <div class="modal-footer-note">Нажимая «Отправить», вы соглашаетесь с политикой обработки данных. Администратор свяжется с вами в течение 15 минут.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Данные специалистов (расширенные)
+      const doctorsData = [
+        { name: "Абдуллин Ильнур Габидуллович", specialty: "Терапевт, гастроэнтеролог", location: "ул. Чехова, д. 2", price: "от 2200 руб", img: "https://reamedalmet.ru/wp-content/uploads/2025/04/1480420-982201-abdullin_square.jpg", category: "terapiya" },
+        { name: "Абдуллина Айгуль Замировна", specialty: "Офтальмолог", location: "ул. Белоглазова, д. 48", price: "2800 руб", img: "https://reamedalmet.ru/wp-content/uploads/2024/01/abdullinaAZ.jpg", category: "oftalmologiya" },
+        { name: "Абдурахимов Олимназар Хужамуратович", specialty: "Хирург, уролог, УЗИ", location: "ул. Чехова, д.2", price: "от 2000 руб", img: "https://reamedalmet.ru/wp-content/uploads/2024/01/1.png", category: "hirurgiya" },
+        { name: "Авзалова Гульнара Идрисовна", specialty: "Офтальмолог", location: "ул. Чехова, д. 2", price: "2200 руб", img: "https://reamedalmet.ru/wp-content/uploads/2020/12/avzalovaGI.jpg", category: "oftalmologiya" },
+        { name: "Александрова Фарида Фаритовна", specialty: "Медицинский психолог", location: "ул. Чехова, д.2", price: "3300 руб", img: "https://reamedalmet.ru/wp-content/uploads/2023/04/Александрова-Фарида.png", category: "psihologiya" },
+        { name: "Асмандияров Фларид Айдарович", specialty: "Уролог, врач УЗИ", location: "ул. Чехова, 2", price: "2200 руб", img: "https://reamedalmet.ru/wp-content/uploads/2025/03/asmadiyarov-2.jpg", category: "uzi" },
+        { name: "Афанасьева Альбина Вениаминовна", specialty: "Офтальмолог", location: "пр. Строителей, 30 Б", price: "2200 руб", img: "https://reamedalmet.ru/wp-content/uploads/2025/01/1868df56-ad1f-43e3-9335-ef9ff282a1d9.jpg", category: "oftalmologiya" },
+        { name: "Ахиартдинова Ландыш Атласовна", specialty: "Педиатр, детский невролог", location: "ул. Чехова, д. 2", price: "от 2200 руб", img: "https://reamedalmet.ru/wp-content/uploads/2023/07/63c16139338de2a9d0c10bdab99aa41a.jpg", category: "nevrologiya" },
+        { name: "Ахмадуллин Тахир Хамзович", specialty: "Травматолог-ортопед", location: "пр. Строителей, д. 30 Б", price: "2200 руб", img: "https://reamedalmet.ru/wp-content/uploads/2024/07/ахмадуллин-травматолог.jpg", category: "hirurgiya" },
+        { name: "Ахметова Наиля Нурмухаметовна", specialty: "Акушер-гинеколог-хирург", location: "ул. Чехова, д.2", price: "2200 руб", img: "https://reamedalmet.ru/wp-content/uploads/2022/08/ахметова.jpg", category: "ginekologiya" },
+        { name: "Бакиров Артур Галиевич", specialty: "Невролог", location: "Чехова, д.2", price: "2500 руб", img: "https://reamedalmet.ru/wp-content/uploads/2021/07/Бакиров-psd-e1669272130261.jpg", category: "nevrologiya" },
+        { name: "Бакирова Гульфия Раисовна", specialty: "Аллерголог-иммунолог", location: "ул. Чехова, д. 2", price: "2200 руб", img: "https://reamedalmet.ru/wp-content/uploads/2022/03/4.jpg", category: "terapiya" },
+        { name: "Белых Надежда Александровна", specialty: "Невролог, детский невролог", location: "улица Чехова, дом 2", price: "2200 руб", img: "https://reamedalmet.ru/wp-content/uploads/2025/10/Без-имени-1-1.png", category: "nevrologiya" },
+        { name: "Бикчурина Алия Фаритовна", specialty: "Детский кардиолог, педиатр", location: "ул. Чехова, д.2", price: "от 1900 руб", img: "https://reamedalmet.ru/wp-content/uploads/2022/11/Бикчурина.jpg", category: "kardiologiya" },
+        { name: "Валиева Регина Айратовна", specialty: "Ревматолог, гематолог, УЗД", location: "ул. Чехова, дом 2", price: "2800 руб", img: "https://reamedalmet.ru/wp-content/uploads/2020/12/ревматолог-600x600.jpg", category: "uzi" },
+        { name: "Габдрахманова Карина Игоревна", specialty: "Эндокринолог, УЗД", location: "ул. Чехова, д. 2", price: "2200 руб", img: "https://reamedalmet.ru/wp-content/uploads/2020/12/gabdrahmanova.jpg", category: "endokrinologiya" },
+        { name: "Гайфуллина Гульфира Аданисовна", specialty: "Акушер-гинеколог, хирург", location: "ул. Чехова, д.2", price: "2200 руб", img: "https://reamedalmet.ru/wp-content/uploads/2023/01/Гайфуллина-гинеклог.jpg", category: "ginekologiya" },
+        { name: "Гусманов Дамир Спартакович", specialty: "Сердечно-сосудистый хирург", location: "ул. Чехова, д. 2", price: "от 2100 руб", img: "https://reamedalmet.ru/wp-content/uploads/2021/08/гусманов-e1669272041158.jpg", category: "kardiologiya" },
+        { name: "Ибрагимова Гульназ Ахтямовна", specialty: "Кардиолог, УЗД", location: "улица Ленина, дом 195", price: "2800 руб", img: "https://reamedalmet.ru/wp-content/uploads/2025/01/ibragimova-600x600.jpg", category: "kardiologiya" },
+        { name: "Ишмуратова Зимфира Шамильевна", specialty: "Кардиолог, функциональный диагност", location: "ул. Чехова, д. 2", price: "2800 руб", img: "https://reamedalmet.ru/wp-content/uploads/2021/01/275e553e-d8be-48dc-bd95-102048b9c00b-600x600.png", category: "kardiologiya" },
+        { name: "Каримова Линера Радиковна", specialty: "Ревматолог, гастроэнтеролог, УЗД", location: "ул. Чехова, д.2", price: "2800 руб", img: "https://reamedalmet.ru/wp-content/uploads/2022/04/karimova.jpg", category: "uzi" },
+        { name: "Насретдинов Рустем Гарафтинович", specialty: "Пульмонолог, гастроэнтеролог", location: "пр. Строителей, д. 30 Б", price: "2800 руб", img: "https://reamedalmet.ru/wp-content/uploads/2020/12/nasretdinov-1.jpg", category: "terapiya" }
+      ];
+
+      // Функция рендера карточек с кнопкой "Записаться"
+      function renderDoctors(filterCategory = "all") {
+        const grid = document.getElementById("doctorsGrid");
+        if (!grid) return;
+        const filtered = filterCategory === "all" ? doctorsData : doctorsData.filter(doc => doc.category === filterCategory);
+        if (filtered.length === 0) {
+          grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:48px; background:#fafcff; border-radius:32px;">По данному направлению врачи временно не отображаются. Позвоните нам для записи.</div>`;
+          return;
+        }
+        grid.innerHTML = filtered.map((doc, idx) => `
+          <div class="doctor-card" style="animation-delay: ${idx * 0.02}s">
+            <div class="card-img">
+              <img src="${doc.img}" alt="${doc.name}" loading="lazy" onerror="this.src='https://placehold.co/400x400?text=Reamed'">
+            </div>
+            <div class="card-content">
+              <div class="doctor-name">${doc.name}</div>
+              <div class="doctor-specialty">${doc.specialty}</div>
+              <div class="doctor-location"><i class="fas fa-map-marker-alt"></i> ${doc.location}</div>
+              <div class="price-badge">${doc.price}</div>
+              <button class="btn-appoint" data-doctor-name="${doc.name.replace(/"/g, '&quot;')}"><i class="fas fa-calendar-plus"></i> Записаться</button>
+            </div>
+          </div>
+        `).join("");
+
+        // После отрисовки назначаем обработчики на все кнопки "Записаться"
+        document.querySelectorAll(".btn-appoint").forEach(btn => {
+          btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const doctorFullName = btn.getAttribute("data-doctor-name") || "специалисту";
+            openModalWithDoctor(doctorFullName);
+          });
+        });
+      }
+
+      // Модальное окно: динамическое имя врача
+      const modalOverlay = document.getElementById('appointmentModal');
+      const modalServiceSpan = document.getElementById('modalServiceName');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const onlineBtn = document.getElementById('onlineAppointmentBtn');
+
+      function openModalWithDoctor(doctorName) {
+        const serviceText = `Запись к врачу: ${doctorName}`;
+        modalServiceSpan.innerText = serviceText;
+        modalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function openModalDefault() {
+        modalServiceSpan.innerText = 'Запись к специалисту';
+        modalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      // События для модалки
+      if (onlineBtn) {
+        onlineBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModalDefault();
+        });
+      }
+      if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+      modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal();
+      });
+
+      // Обработка отправки формы
+      const modalForm = document.getElementById('modalForm');
+      modalForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('userName').value.trim();
+        const phone = document.getElementById('userPhone').value.trim();
+        const date = document.getElementById('userDate').value;
+        const service = modalServiceSpan.innerText;
+        if (!name || !phone) {
+          alert('Пожалуйста, заполните имя и номер телефона');
+          return;
+        }
+        alert(`Спасибо, ${name}! Ваша заявка на "${service}" принята. Мы свяжемся с вами по номеру ${phone} в ближайшее время.${date ? ` Предварительная дата: ${date}` : ''}`);
+        closeModal();
+        modalForm.reset();
+      });
+
+      // Фильтрация и инициализация
+      document.addEventListener("DOMContentLoaded", () => {
+        renderDoctors("all");
+
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            filterBtns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            const filterVal = btn.getAttribute("data-filter");
+            renderDoctors(filterVal);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

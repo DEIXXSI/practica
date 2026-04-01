@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Контакты | Реамед — медицинские центры в Альметьевске</title>
+  <meta name="description" content="Адреса, телефоны и график работы медицинских центров Реамед в Альметьевске. Как проехать, схема проезда, контактная информация.">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #ffffff;
+      color: #1a2c3e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    h1, h2, h3, .logo, .nav-link, .btn {
+      font-family: "Outfit", sans-serif;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #0f172a;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+
+    .section-subhead {
+      font-size: 1.125rem;
+      color: #475569;
+      max-width: 640px;
+      margin-bottom: 2rem;
+    }
+
+    /* ========== ВЕРХНЯЯ ПЛАШКА ========== */
+    .top-bar {
+      background-color: #f8fafc;
+      border-bottom: 1px solid #e9eef3;
+      font-size: 14px;
+      padding: 10px 0;
+    }
+
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .top-contacts {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .top-contacts a,
+    .top-contacts span {
+      color: #334155;
+      text-decoration: none;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .top-contacts a:hover {
+      color: #1e4a8a;
+    }
+
+    .social-icons a {
+      color: #334155;
+      font-size: 18px;
+      transition: color 0.2s;
+    }
+    .social-icons a:hover {
+      color: #1e4a8a;
+    }
+
+    /* ========== ОСНОВНОЙ ХЕДЕР ========== */
+    .main-header {
+      background: white;
+      padding: 20px 0;
+      border-bottom: 1px solid #eef2f6;
+    }
+
+    .main-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .logo img {
+      display: block;
+      height: 44px;
+      width: auto;
+    }
+
+    .header-contacts {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .contact-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .contact-block i {
+      font-size: 28px;
+      color: #1e4a8a;
+    }
+
+    .contact-info .label {
+      font-size: 13px;
+      color: #5b6e8c;
+      letter-spacing: 0.3px;
+    }
+
+    .contact-info a {
+      font-weight: 700;
+      font-size: 18px;
+      color: #0f2b4d;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-info a:hover {
+      color: #2563eb;
+    }
+
+    /* ========== НАВИГАЦИЯ ========== */
+    .nav-menu {
+      background: white;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 1px 6px rgba(0, 0, 0, 0.02);
+      border-bottom: 1px solid #eef2f6;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(2px);
+      background-color: rgba(255, 255, 255, 0.98);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      gap: 8px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links li a {
+      display: inline-block;
+      padding: 16px 12px;
+      font-weight: 500;
+      font-size: 15px;
+      color: #1e2f44;
+      text-decoration: none;
+      transition: all 0.2s;
+      border-radius: 8px;
+    }
+
+    .nav-links li.active a,
+    .nav-links li a:hover {
+      color: #1e4a8a;
+      background-color: #f0f4fe;
+    }
+
+    .btn-online {
+      background: linear-gradient(105deg, #1e4a8a 0%, #2563eb 100%);
+      color: white !important;
+      padding: 8px 16px !important;
+      border-radius: 40px !important;
+      font-weight: 600 !important;
+      margin-left: 12px;
+      transition: transform 0.1s, box-shadow 0.2s;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+      margin-top: 8px;
+      cursor: pointer;
+    }
+
+    .btn-online i {
+      margin-right: 8px;
+    }
+
+    .btn-online:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+      background: linear-gradient(105deg, #1e4a8a, #2b6ef0);
+    }
+
+    /* Основной контент */
+    .page-header {
+      background: linear-gradient(135deg, #eef5ff 0%, #ffffff 100%);
+      padding: 48px 0 32px;
+    }
+
+    /* Карточки филиалов (расширенные) */
+    .branches-detail {
+      padding: 60px 0;
+      background: white;
+    }
+    .branch-detail-card {
+      background: white;
+      border-radius: 24px;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 40px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+    }
+    .branch-detail-card:hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+      transform: translateY(-2px);
+    }
+    .branch-detail-header {
+      background: linear-gradient(135deg, #e8f0fe, white);
+      padding: 28px 32px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .branch-detail-header h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+    .branch-detail-header .branch-address {
+      color: #475569;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .branch-detail-body {
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    @media (max-width: 768px) {
+      .branch-detail-body {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+    .info-block {
+      margin-bottom: 24px;
+    }
+    .info-block h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .info-block h4 i {
+      color: #1a73e8;
+      width: 24px;
+    }
+    .phone-list {
+      list-style: none;
+    }
+    .phone-list li {
+      margin-bottom: 10px;
+    }
+    .phone-list a {
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .phone-list a:hover {
+      color: #1a73e8;
+    }
+    .schedule-list {
+      list-style: none;
+    }
+    .schedule-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .schedule-list li span:first-child {
+      font-weight: 500;
+    }
+    .services-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .service-tag {
+      background: #f1f5f9;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: #0f172a;
+    }
+    .map-placeholder {
+      background: #f1f5f9;
+      border-radius: 16px;
+      overflow: hidden;
+      min-height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      color: #475569;
+    }
+    .map-links-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 40px;
+      text-decoration: none;
+      color: #1a73e8;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .map-btn:hover {
+      background: #e8f0fe;
+      border-color: #1a73e8;
+    }
+
+    /* Секция реквизитов */
+    .requisites-section {
+      background: #f8fafd;
+      padding: 60px 0;
+    }
+    .requisites-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 32px;
+    }
+    .requisite-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.2s;
+    }
+    .requisite-card:hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+    }
+    .requisite-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+      color: #1a73e8;
+    }
+    .requisite-card p {
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    /* Футер (как на главной) */
+    .footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 48px 0 32px;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      justify-content: space-between;
+    }
+    .footer-col {
+      flex: 1;
+      min-width: 200px;
+    }
+    .footer-col h4 {
+      color: white;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    .footer-links {
+      list-style: none;
+    }
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: white;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #1e293b;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 900px) {
+      .main-header .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .header-contacts {
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+      .nav-links {
+        justify-content: center;
+      }
+      .btn-online {
+        margin-left: 0;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+    @media (max-width: 640px) {
+      .container {
+        padding: 0 20px;
+      }
+      .branch-detail-header {
+        padding: 20px;
+      }
+      .branch-detail-body {
+        padding: 20px;
+      }
+    }
+
+    /* ========== МОДАЛЬНОЕ ОКНО (В ЕДИНОМ СТИЛЕ С ПРИМЕРОМ) ========== */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0.3s ease, opacity 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .modal-container {
+      background: #ffffff;
+      max-width: 500px;
+      width: 90%;
+      border-radius: 40px;
+      box-shadow: 0 35px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+      transform: scale(0.96);
+      transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+
+    .modal-overlay.active .modal-container {
+      transform: scale(1);
+    }
+
+    .modal-header {
+      background: linear-gradient(105deg, #1e4a8a, #2563eb);
+      padding: 28px 28px 20px;
+      color: white;
+      position: relative;
+    }
+    .modal-header h3 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+    .modal-header p {
+      font-size: 15px;
+      opacity: 0.85;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .modal-close {
+      position: absolute;
+      right: 24px;
+      top: 24px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 60px;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 20px;
+      color: white;
+    }
+    .modal-close:hover {
+      background: rgba(255, 255, 255, 0.35);
+      transform: rotate(90deg);
+    }
+
+    .modal-body {
+      padding: 28px 28px 36px;
+    }
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1e2f44;
+      font-size: 14px;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 28px;
+      border: 1.5px solid #e2e8f0;
+      font-size: 16px;
+      transition: all 0.2s;
+      background: #fefefe;
+      font-family: inherit;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+    .modal-submit {
+      background: linear-gradient(105deg, #1e4a8a, #2563eb);
+      border: none;
+      width: 100%;
+      padding: 16px;
+      border-radius: 44px;
+      font-weight: 700;
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    }
+    .modal-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.4);
+    }
+    .modal-footer-note {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #5b6e8c;
+      text-align: center;
+    }
+
+    /* небольшая кнопка для обратной связи в футере? не требуется, но стили готовы */
+    .branch-btn-appointment {
+      background: linear-gradient(105deg, #1e4a8a, #2563eb);
+      border: none;
+      padding: 8px 20px;
+      border-radius: 32px;
+      font-weight: 600;
+      font-size: 14px;
+      color: white;
+      cursor: pointer;
+      margin-top: 16px;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .branch-btn-appointment:hover {
+      background: linear-gradient(105deg, #0f3b6f, #1e4a8a);
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+  <!-- Верхняя плашка (как на главной) -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-contacts">
+        <a href="mailto:info@reamedalmet.ru"><i class="far fa-envelope"></i> info@reamedalmet.ru</a>
+        <span><i class="far fa-clock"></i> Ежедневно с 8:00 до 20:00</span>
+      </div>
+      <div class="social-icons">
+        <a href="https://vk.com/reamedalmet" target="_blank"><i class="fab fa-vk"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Основной хедер -->
+  <header class="main-header">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="https://reamedalmet.ru/wp-content/uploads/2023/11/logo-1.png" alt="Реамед" width="168" height="44">
+      </a>
+      <div class="header-contacts">
+        <div class="contact-block">
+          <i class="fas fa-phone-alt"></i>
+          <div class="contact-info">
+            <div class="label">Прием врачей / Медосмотры</div>
+            <a href="tel:+78553399939">+7 (8553) 39-99-39</a>
+          </div>
+        </div>
+        <div class="contact-block">
+          <i class="fas fa-stethoscope"></i>
+          <div class="contact-info">
+            <div class="label">Наркология</div>
+            <a href="tel:+78553440404">+7 (8553) 44-04-04</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Навигация (кнопка онлайн-запись теперь открывает модалку) -->
+  <div class="nav-menu">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="./index.html">Главная</a></li>
+        <li><a href="./specialist.html">Специалисты</a></li>
+        <li><a href="./uslugi.html">Услуги</a></li>
+        <li class="active"><a href="./contact.html">Контакты</a></li>
+        <li><a href="./vacancy2.html">Вакансии</a></li>
+        <li><a href="#" class="btn-online" id="onlineAppointmentBtn"><i class="fas fa-calendar-check"></i> Онлайн-запись</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Заголовок страницы -->
+  <div class="page-header">
+    <div class="container">
+      <h1>Контакты</h1>
+      <p class="section-subhead">Свяжитесь с нами удобным способом или посетите один из наших медицинских центров в Альметьевске</p>
+    </div>
+  </div>
+
+  <!-- Детальная информация по филиалам (добавим кнопку записи в каждом филиале для удобства) -->
+  <div class="branches-detail">
+    <div class="container">
+      <h2>Наши медицинские центры</h2>
+      <p class="section-subhead">5 филиалов по всему городу для вашего удобства</p>
+
+      <!-- Филиал 1: Чехова -->
+      <div class="branch-detail-card">
+        <div class="branch-detail-header">
+          <h3>Медицинский центр на Чехова</h3>
+          <div class="branch-address"><i class="fas fa-map-marker-alt"></i> г. Альметьевск, ул. Чехова, д.2</div>
+        </div>
+        <div class="branch-detail-body">
+          <div>
+            <div class="info-block"><h4><i class="fas fa-phone-alt"></i> Телефоны</h4><ul class="phone-list"><li><a href="tel:+78553399939">+7 (8553) 39-99-39</a> — прием врачей</li><li><a href="tel:+78553399939">+7 (8553) 39-99-39</a> — диагностика</li></ul></div>
+            <div class="info-block"><h4><i class="far fa-clock"></i> Режим работы</h4><ul class="schedule-list"><li><span>Пн–Пт:</span><span>8:00 — 20:00</span></li><li><span>Сб–Вс:</span><span>8:00 — 16:00</span></li></ul></div>
+            <div class="info-block"><h4><i class="fas fa-stethoscope"></i> Направления</h4><div class="services-list"><span class="service-tag">Прием врачей</span><span class="service-tag">Диагностика</span><span class="service-tag">Хирургия</span><span class="service-tag">УЗИ</span><span class="service-tag">Лаборатория</span></div></div>
+            <button class="branch-btn-appointment openModalFromBranch" data-branch="Медицинский центр на Чехова"><i class="fas fa-calendar-plus"></i> Записаться в этот филиал</button>
+          </div>
+          <div><div class="map-placeholder"><i class="fas fa-map-marked-alt" style="font-size: 48px; opacity: 0.5"></i><p>ул. Чехова, д.2, Альметьевск</p><div class="map-links-group"><a href="https://yandex.ru/maps/11121/almetyevsk/house/ulitsa_chekhova_2/YUsYdQdlS0IHQFtufXVwc3xjYA==/?ll=52.305270%2C54.912004&z=17" class="map-btn" target="_blank"><i class="fab fa-yandex"></i> Яндекс.Карты</a><a href="https://2gis.ru/almetevsk/firm/70000001065082636" class="map-btn" target="_blank"><i class="fas fa-map"></i> 2ГИС</a></div></div></div>
+        </div>
+      </div>
+
+      <!-- Филиал 2: Строителей -->
+      <div class="branch-detail-card">
+        <div class="branch-detail-header"><h3>Медицинский центр на Строителей</h3><div class="branch-address"><i class="fas fa-map-marker-alt"></i> г. Альметьевск, пр. Строителей, д.30 б</div></div>
+        <div class="branch-detail-body">
+          <div><div class="info-block"><h4><i class="fas fa-phone-alt"></i> Телефон</h4><ul class="phone-list"><li><a href="tel:+78553399939">+7 (8553) 39-99-39</a></li></ul></div><div class="info-block"><h4><i class="far fa-clock"></i> Режим работы</h4><ul class="schedule-list"><li><span>Пн–Пт:</span><span>7:00 — 19:00</span></li><li><span>Сб–Вс:</span><span>8:00 — 16:00</span></li></ul></div><div class="info-block"><h4><i class="fas fa-stethoscope"></i> Направления</h4><div class="services-list"><span class="service-tag">Прием врачей</span><span class="service-tag">Диагностика</span><span class="service-tag">Функциональная диагностика</span></div></div><button class="branch-btn-appointment openModalFromBranch" data-branch="Медицинский центр на Строителей"><i class="fas fa-calendar-plus"></i> Записаться в этот филиал</button></div>
+          <div><div class="map-placeholder"><i class="fas fa-map-marked-alt" style="font-size: 48px; opacity: 0.5"></i><p>пр. Строителей, д.30 б, Альметьевск</p><div class="map-links-group"><a href="https://yandex.ru/maps/11121/almetyevsk/house/prospekt_stroiteley_30b/YUsYdAFnSkMGQFtufXR4dHlhZg==/?ll=52.267361%2C54.895522&z=17" class="map-btn" target="_blank"><i class="fab fa-yandex"></i> Яндекс.Карты</a><a href="https://2gis.ru/almetevsk/firm/70000001079963870" class="map-btn" target="_blank"><i class="fas fa-map"></i> 2ГИС</a></div></div></div>
+        </div>
+      </div>
+
+      <!-- Филиал 3: Белоглазова -->
+      <div class="branch-detail-card">
+        <div class="branch-detail-header"><h3>Медицинский центр на Белоглазова</h3><div class="branch-address"><i class="fas fa-map-marker-alt"></i> г. Альметьевск, ул. Белоглазова, д.48</div></div>
+        <div class="branch-detail-body">
+          <div><div class="info-block"><h4><i class="fas fa-phone-alt"></i> Телефон</h4><ul class="phone-list"><li><a href="tel:+78553399939">+7 (8553) 39-99-39</a></li></ul></div><div class="info-block"><h4><i class="far fa-clock"></i> Режим работы</h4><ul class="schedule-list"><li><span>Пн–Пт:</span><span>8:00 — 19:00</span></li><li><span>Обед:</span><span>12:00 — 13:00</span></li><li><span>Сб–Вс:</span><span>8:00 — 12:00</span></li></ul></div><div class="info-block"><h4><i class="fas fa-stethoscope"></i> Направления</h4><div class="services-list"><span class="service-tag">Прием врачей</span><span class="service-tag">Диагностика</span><span class="service-tag">УЗИ</span></div></div><button class="branch-btn-appointment openModalFromBranch" data-branch="Медицинский центр на Белоглазова"><i class="fas fa-calendar-plus"></i> Записаться в этот филиал</button></div>
+          <div><div class="map-placeholder"><i class="fas fa-map-marked-alt" style="font-size: 48px; opacity: 0.5"></i><p>ул. Белоглазова, д.48, Альметьевск</p><div class="map-links-group"><a href="https://yandex.ru/maps/11121/almetyevsk/house/ulitsa_beloglazova_48/YUsYdA5pQUQAQFtufXVxdnRnZw==/?ll=52.299817%2C54.907843&z=17" class="map-btn" target="_blank"><i class="fab fa-yandex"></i> Яндекс.Карты</a><a href="https://2gis.ru/almetevsk/firm/70000001045190421" class="map-btn" target="_blank"><i class="fas fa-map"></i> 2ГИС</a></div></div></div>
+        </div>
+      </div>
+
+      <!-- Филиал 4: Фахретдина -->
+      <div class="branch-detail-card">
+        <div class="branch-detail-header"><h3>Отделение медосмотров</h3><div class="branch-address"><i class="fas fa-map-marker-alt"></i> г. Альметьевск, ул. Р.Фахретдина, д.57Д</div></div>
+        <div class="branch-detail-body">
+          <div><div class="info-block"><h4><i class="fas fa-phone-alt"></i> Телефон</h4><ul class="phone-list"><li><a href="tel:+78553399939">+7 (8553) 39-99-39</a></li></ul></div><div class="info-block"><h4><i class="far fa-clock"></i> Режим работы</h4><ul class="schedule-list"><li><span>Пн–Пт:</span><span>8:00 — 16:30</span></li><li><span>Обед:</span><span>12:00 — 13:00</span></li><li><span>Сб–Вс:</span><span>Выходной</span></li></ul></div><div class="info-block"><h4><i class="fas fa-notes-medical"></i> Направления</h4><div class="services-list"><span class="service-tag">Медицинские осмотры</span><span class="service-tag">Медкнижки</span><span class="service-tag">Справки</span></div></div><button class="branch-btn-appointment openModalFromBranch" data-branch="Отделение медосмотров (Фахретдина)"><i class="fas fa-calendar-plus"></i> Записаться в этот филиал</button></div>
+          <div><div class="map-placeholder"><i class="fas fa-map-marked-alt" style="font-size: 48px; opacity: 0.5"></i><p>ул. Р.Фахретдина, д.57Д, Альметьевск</p><div class="map-links-group"><a href="https://yandex.ru/maps/11121/almetyevsk/house/ulitsa_rizy_fakhretdina_57d/YUsYdQZnQUIEQFtufXR5eHphZA==/?ll=52.317873%2C54.889620&z=17" class="map-btn" target="_blank"><i class="fab fa-yandex"></i> Яндекс.Карты</a><a href="https://2gis.ru/almetevsk/geo/70030076138932180" class="map-btn" target="_blank"><i class="fas fa-map"></i> 2ГИС</a></div></div></div>
+        </div>
+      </div>
+
+      <!-- Филиал 5: Ленина -->
+      <div class="branch-detail-card">
+        <div class="branch-detail-header"><h3>Медицинский центр на Ленина</h3><div class="branch-address"><i class="fas fa-map-marker-alt"></i> г. Альметьевск, ул. Ленина, д.195</div></div>
+        <div class="branch-detail-body">
+          <div><div class="info-block"><h4><i class="fas fa-phone-alt"></i> Телефон</h4><ul class="phone-list"><li><a href="tel:+78553399939">+7 (8553) 39-99-39</a></li></ul></div><div class="info-block"><h4><i class="far fa-clock"></i> Режим работы</h4><ul class="schedule-list"><li><span>Пн–Пт:</span><span>7:00 — 20:00</span></li><li><span>Суббота:</span><span>8:00 — 15:00</span></li><li><span>Воскресенье:</span><span>Выходной</span></li></ul></div><div class="info-block"><h4><i class="fas fa-stethoscope"></i> Направления</h4><div class="services-list"><span class="service-tag">Прием врачей</span><span class="service-tag">Диагностика</span><span class="service-tag">УЗИ</span></div></div><button class="branch-btn-appointment openModalFromBranch" data-branch="Медицинский центр на Ленина"><i class="fas fa-calendar-plus"></i> Записаться в этот филиал</button></div>
+          <div><div class="map-placeholder"><i class="fas fa-map-marked-alt" style="font-size: 48px; opacity: 0.5"></i><p>ул. Ленина, д.195, Альметьевск</p><div class="map-links-group"><a href="https://yandex.ru/maps/11121/almetyevsk/house/ulitsa_lenina_195/YUsYdAJmTkIOQFtufXVxdXxibA==/?ll=52.256778%2C54.904018&z=17" class="map-btn" target="_blank"><i class="fab fa-yandex"></i> Яндекс.Карты</a><a href="https://2gis.ru/almetevsk/geo/15200284397536295" class="map-btn" target="_blank"><i class="fas fa-map"></i> 2ГИС</a></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Реквизиты и документы -->
+  <div class="requisites-section">
+    <div class="container">
+      <h2 style="text-align: center">Реквизиты и документы</h2>
+      <p class="section-subhead" style="text-align: center">Юридическая информация</p>
+      <div class="requisites-grid">
+        <div class="requisite-card"><h3>ООО «Реамед»</h3><p><strong>ИНН/КПП:</strong> 1644056530 / 164401001</p><p><strong>ОГРН:</strong> 1081644000842</p><p><strong>Лицензия:</strong> Л041-01181-16/00344835 от 07.09.2020</p><p><strong>Юр. адрес:</strong> 423458, РТ, г. Альметьевск, ул. Чехова, д.2</p></div>
+        <div class="requisite-card"><h3>ООО «ЛДЦ «Реальная медицина»</h3><p><strong>ИНН/КПП:</strong> 1644055211 / 164401001</p><p><strong>ОГРН:</strong> 1081644000195</p><p><strong>Лицензия:</strong> Л041-01181-16/00344830</p></div>
+        <div class="requisite-card"><h3>Документы</h3><p><a href="./oferta.html" style="color: #1a73e8">📄 Договор оферты</a></p><p><a href="./policy.html" style="color: #1a73e8">🔒 Политика обработки персональных данных</a></p><p><a href="./nalog.html" style="color: #1a73e8">💰 Справка для налогового вычета</a></p><p></p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid"><div class="footer-col"><h4>ООО «Реамед»</h4><p>Лицензия Л041-01181-16/00344835 от 07.09.2020</p><p><i class="fas fa-phone-alt"></i> +7 (8553) 39-99-39</p><p><i class="far fa-envelope"></i> info@reamedalmet.ru</p></div><div class="footer-col"><h4>Пациентам</h4><ul class="footer-links"><li><a href="./oferta.html">Договор оферты</a></li><li><a href="./policy.html">Политика обработки данных</a></li><li><a href="./nalog.html">Налоговый вычет</a></li></ul></div></div>
+      <div class="copyright">2025 © ООО «Реамед». Все права защищены. Информация на сайте не является публичной офертой.</div>
+    </div>
+  </footer>
+
+  <!-- МОДАЛЬНОЕ ОКНО (единый стиль с диагностикой) -->
+  <div class="modal-overlay" id="appointmentModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-close" id="closeModalBtn"><i class="fas fa-times"></i></div>
+        <h3><i class="fas fa-calendar-check"></i> Запись на приём</h3>
+        <p><i class="fas fa-map-marker-alt"></i> <span id="modalBranchName">Филиал / Услуга</span></p>
+      </div>
+      <div class="modal-body">
+        <form id="modalForm">
+          <div class="form-group"><label>Ваше имя *</label><input type="text" id="userName" placeholder="Иван Иванов" required></div>
+          <div class="form-group"><label>Телефон *</label><input type="tel" id="userPhone" placeholder="+7 (___) ___-__-__" required></div>
+          <div class="form-group"><label>Желаемая дата</label><input type="date" id="userDate"></div>
+          <button type="submit" class="modal-submit">Отправить заявку <i class="fas fa-paper-plane"></i></button>
+          <div class="modal-footer-note">Нажимая «Отправить», вы соглашаетесь с политикой обработки данных. Администратор свяжется с вами в течение 15 минут.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Модальное окно — полная интеграция в стиле диагностики
+    const modalOverlay = document.getElementById('appointmentModal');
+    const modalBranchSpan = document.getElementById('modalBranchName');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const onlineBtn = document.getElementById('onlineAppointmentBtn');
+
+    function openModal(branchName = 'Онлайн-запись') {
+      modalBranchSpan.innerText = branchName;
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Кнопка в навигации "Онлайн-запись"
+    if (onlineBtn) {
+      onlineBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal('Все филиалы (запись на приём)');
+      });
+    }
+
+    // Кнопки "Записаться в этот филиал" внутри карточек
+    const branchBtns = document.querySelectorAll('.openModalFromBranch');
+    branchBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const branchName = btn.getAttribute('data-branch') || 'Медицинский центр';
+        openModal(branchName);
+      });
+    });
+
+    // Закрытие по крестику и оверлею
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal();
+    });
+
+    // Отправка формы модалки
+    const modalForm = document.getElementById('modalForm');
+    modalForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('userName').value.trim();
+      const phone = document.getElementById('userPhone').value.trim();
+      const date = document.getElementById('userDate').value;
+      const branch = modalBranchSpan.innerText;
+      if (!name || !phone) {
+        alert('Пожалуйста, заполните имя и номер телефона');
+        return;
+      }
+      alert(`Спасибо, ${name}! Ваша заявка на приём в "${branch}" принята. Мы свяжемся с вами по номеру ${phone} в ближайшее время.${date ? ` Предварительная дата: ${date}` : ''}`);
+      closeModal();
+      modalForm.reset();
+    });
+  </script>
+</body>
+</html>

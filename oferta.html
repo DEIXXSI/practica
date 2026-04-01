@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Договор оферты | ООО "Реамед" - Реамед</title>
+    <meta name="description" content="Договор оферты о предоставлении платных медицинских услуг ООО &quot;РЕАМЕД&quot;. Официальный документ, регулирующий отношения между клиникой и пациентами.">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #ffffff;
+            color: #1e293b;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        @media (max-width: 1024px) {
+            .container { padding: 0 20px; }
+        }
+        @media (max-width: 768px) {
+            .container { padding: 0 16px; }
+        }
+
+        a {
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        /* ========== ВЕРХНЯЯ ПЛАШКА ========== */
+        .top-bar {
+            background-color: #f8fafc;
+            border-bottom: 1px solid #eef2f6;
+            font-size: 14px;
+            padding: 10px 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .top-contacts {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .top-contacts a,
+        .top-contacts span {
+            color: #334155;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .top-contacts a:hover {
+            color: #1e4a8a;
+        }
+
+        .social-icons a {
+            color: #334155;
+            font-size: 18px;
+            transition: color 0.2s;
+        }
+        .social-icons a:hover {
+            color: #1e4a8a;
+        }
+
+        /* ========== ОСНОВНОЙ ХЕДЕР ========== */
+        .main-header {
+            background: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #eef2f6;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .logo img {
+            display: block;
+            height: 44px;
+            width: auto;
+        }
+
+        .header-contacts {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .contact-block {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-block i {
+            font-size: 28px;
+            color: #1e4a8a;
+        }
+
+        .contact-info .label {
+            font-size: 13px;
+            color: #5b6e8c;
+            letter-spacing: 0.3px;
+        }
+
+        .contact-info a {
+            font-weight: 700;
+            font-size: 18px;
+            color: #0f2b4d;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: #2563eb;
+        }
+
+        /* ========== НАВИГАЦИЯ ========== */
+        .nav-menu {
+            background: white;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 1px 6px rgba(0, 0, 0, 0.02);
+            border-bottom: 1px solid #eef2f6;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(2px);
+            background-color: rgba(255, 255, 255, 0.98);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 8px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links li a {
+            display: inline-block;
+            padding: 16px 12px;
+            font-weight: 500;
+            font-size: 15px;
+            color: #1e2f44;
+            text-decoration: none;
+            transition: all 0.2s;
+            border-radius: 8px;
+        }
+
+        .nav-links li.active a,
+        .nav-links li a:hover {
+            color: #1e4a8a;
+            background-color: #f0f4fe;
+        }
+
+        .btn-online {
+            background: linear-gradient(105deg, #1e4a8a 0%, #2563eb 100%);
+            color: white !important;
+            padding: 8px 16px !important;
+            border-radius: 40px !important;
+            font-weight: 600 !important;
+            margin-left: 12px;
+            transition: transform 0.1s, box-shadow 0.2s;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+            margin-top: 8px;
+            cursor: pointer;
+        }
+
+        .btn-online i {
+            margin-right: 8px;
+        }
+
+        .btn-online:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+        }
+
+        /* ========== ГЕРО-БЛОК ========== */
+        .hero-offer {
+            background: linear-gradient(135deg, #eef2ff 0%, #ffffff 100%);
+            padding: 48px 0 32px;
+            border-bottom: 1px solid #eef2f6;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            background: linear-gradient(135deg, #1e4a8a, #2563eb);
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+
+        .hero-content h1 {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #0a2540;
+            margin-bottom: 16px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: #475569;
+        }
+
+        /* ========== ОСНОВНОЙ КОНТЕНТ ========== */
+        .document-wrapper {
+            background: white;
+            border-radius: 24px;
+            margin: 40px 0 60px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .document-header {
+            background: #f8fafc;
+            padding: 24px 32px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .document-header h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #0f2b4d;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #2563eb;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .download-btn:hover {
+            background: #1e4a8a;
+            transform: translateY(-2px);
+        }
+
+        .document-content {
+            padding: 40px 48px;
+            line-height: 1.7;
+            color: #1e293b;
+        }
+
+        .document-content h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #0f2b4d;
+            margin: 28px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .document-content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e4a8a;
+            margin: 20px 0 12px;
+        }
+
+        .document-content p {
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        .document-content strong {
+            color: #0f2b4d;
+        }
+
+        .document-content ul, .document-content ol {
+            margin: 12px 0 20px 24px;
+        }
+
+        .document-content li {
+            margin: 8px 0;
+            font-size: 15px;
+        }
+
+        .document-content .pdf-link {
+            display: inline-block;
+            background: #f1f5f9;
+            padding: 12px 24px;
+            border-radius: 12px;
+            margin: 20px 0;
+            color: #2563eb;
+            font-weight: 500;
+        }
+
+        .document-content .pdf-link i {
+            margin-right: 8px;
+        }
+
+        .info-note {
+            background: #fef9e3;
+            border-left: 4px solid #e9c46a;
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 12px;
+        }
+
+        /* ========== ФУТЕР ========== */
+        .footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 48px 0 32px;
+            margin-top: 40px;
+        }
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            justify-content: space-between;
+        }
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+        .footer-col h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #1e293b;
+            font-size: 0.8rem;
+        }
+
+        /* ========== МОДАЛЬНОЕ ОКНО (В ЕДИНОМ СТИЛЕ) ========== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(6px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.3s ease, opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .modal-container {
+            background: #ffffff;
+            max-width: 500px;
+            width: 90%;
+            border-radius: 40px;
+            box-shadow: 0 35px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            transform: scale(0.96);
+            transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            background: linear-gradient(105deg, #1e4a8a, #2563eb);
+            padding: 28px 28px 20px;
+            color: white;
+            position: relative;
+        }
+        .modal-header h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.3px;
+        }
+        .modal-header p {
+            font-size: 15px;
+            opacity: 0.85;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .modal-close {
+            position: absolute;
+            right: 24px;
+            top: 24px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 60px;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 20px;
+            color: white;
+        }
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 28px 28px 36px;
+        }
+        .form-group {
+            margin-bottom: 24px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1e2f44;
+            font-size: 14px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 28px;
+            border: 1.5px solid #e2e8f0;
+            font-size: 16px;
+            transition: all 0.2s;
+            background: #fefefe;
+            font-family: inherit;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+        .modal-submit {
+            background: linear-gradient(105deg, #1e4a8a, #2563eb);
+            border: none;
+            width: 100%;
+            padding: 16px;
+            border-radius: 44px;
+            font-weight: 700;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        }
+        .modal-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(37, 99, 235, 0.4);
+        }
+        .modal-footer-note {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #5b6e8c;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 28px; }
+            .document-content { padding: 24px; }
+            .document-header { padding: 16px 20px; flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Верхняя плашка -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-contacts">
+            <a href="mailto:info@reamedalmet.ru"><i class="far fa-envelope"></i> info@reamedalmet.ru</a>
+            <span><i class="far fa-clock"></i> Ежедневно с 8:00 до 20:00</span>
+        </div>
+        <div class="social-icons">
+            <a href="https://vk.com/reamedalmet" target="_blank"><i class="fab fa-vk"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- Основной хедер -->
+<header class="main-header">
+    <div class="container">
+        <a href="/" class="logo">
+            <img src="https://reamedalmet.ru/wp-content/uploads/2023/11/logo-1.png" alt="Реамед" width="168" height="44">
+        </a>
+        <div class="header-contacts">
+            <div class="contact-block">
+                <i class="fas fa-phone-alt"></i>
+                <div class="contact-info">
+                    <div class="label">Прием врачей / Медосмотры</div>
+                    <a href="tel:+78553399939">+7 (8553) 39-99-39</a>
+                </div>
+            </div>
+            <div class="contact-block">
+                <i class="fas fa-stethoscope"></i>
+                <div class="contact-info">
+                    <div class="label">Наркология</div>
+                    <a href="tel:+78553440404">+7 (8553) 44-04-04</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Навигация (кнопка онлайн-запись открывает модальное окно) -->
+<div class="nav-menu">
+    <div class="container">
+        <ul class="nav-links">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="./specialist.html">Специалисты</a></li>
+            <li><a href="./uslugi.html">Услуги</a></li>
+            <li><a href="./contact.html">Контакты</a></li>
+            <li><a href="./vacancy2.html">Вакансии</a></li>
+            <li><a href="#" class="btn-online" id="onlineAppointmentBtn"><i class="fas fa-calendar-check"></i> Онлайн-запись</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- ГЕРО-СЕКЦИЯ -->
+<div class="hero-offer">
+    <div class="container">
+        <div class="hero-content">
+            <span class="hero-badge"><i class="fas fa-file-contract"></i> Официальный документ</span>
+            <h1>Договор оферты о предоставлении платных медицинских услуг</h1>
+            <p>ООО "РЕАМЕД" | Лицензия Л041-01181-16/00344835 от 07.09.2020</p>
+        </div>
+    </div>
+</div>
+
+<main>
+    <div class="container">
+        <div class="document-wrapper">
+            <div class="document-header">
+                <h2><i class="fas fa-file-pdf"></i> Договор оферты ООО «РЕАМЕД»</h2>
+                <a href="https://reamedalmet.ru/wp-content/uploads/2024/02/doc02026520240228131728.pdf" class="download-btn" target="_blank">
+                    <i class="fas fa-download"></i> Скачать PDF
+                </a>
+            </div>
+            <div class="document-content">
+                <p><strong>Город Альметьевск, Республика Татарстан</strong></p>
+                <p><strong>01 сентября 2022 года</strong></p>
+
+                <div class="info-note">
+                    <i class="fas fa-info-circle" style="color: #e9c46a; margin-right: 10px;"></i>
+                    <strong>Важно:</strong> Данный документ является публичной офертой. Полным и безоговорочным акцептом является осуществление Пациентом первой оплаты предложенных медицинских услуг.
+                </div>
+
+                <h3>1. Основные понятия</h3>
+                <p>Для целей настоящего Договора используются следующие основные понятия:</p>
+                <p><strong>Платные медицинские услуги</strong> — медицинские услуги, предоставляемые на возмездной основе за счет личных средств граждан, средств юридических лиц и иных средств на основании договоров, в том числе договоров добровольного медицинского страхования;</p>
+                <p><strong>Пациент</strong> — физическое лицо, имеющее намерение получить либо получающее платные медицинские услуги лично в соответствии с договором. Потребитель, получающий платные медицинские услуги, является пациентом, на которого распространяется действие Федерального закона от 21.11.2011 N 323-ФЗ «Об основах охраны здоровья граждан в Российской Федерации»;</p>
+                <p><strong>Исполнитель</strong> — медицинская организация, предоставляющая платные медицинские услуги потребителям (пациентам).</p>
+
+                <h3>2. Предмет договора</h3>
+                <p>2.1. В соответствии с настоящим Договором Клиника «РЕАМЕД» обязуется оказывать Пациенту на возмездной основе медицинские услуги, отвечающие требованиям, предъявляемым к методам диагностики, профилактики и лечения, разрешенным на территории РФ (далее – «услуги»), а Пациент обязуется своевременно оплачивать стоимость предоставляемых медицинских услуг, а также выполнять требования Клиники «РЕАМЕД», обеспечивающие качественное предоставление медицинских услуг, включая сообщение необходимых для этого сведений.</p>
+                <p>2.2. Медицинские услуги оказываются в соответствии с требованиями Закона РФ от 07.02.1992г. №2300-1 «О защите прав потребителей» и Федерального закона от 21.11.2011г. №323-ФЗ «Об основах охраны здоровья граждан в Российской Федерации», Правилами предоставления платных медицинских услуг, утвержденных Правительством РФ (далее – Правила), настоящим договором. Акцептом настоящего Договора Пациент подтверждает, что он ознакомился с вышеуказанными документами, размещенными на информационном стенде, и обязуется их соблюдать.</p>
+                <p>2.3. Перечень и стоимость услуг, предоставляемых Пациенту, устанавливаются прейскурантом Клиники «РЕАМЕД», действующим на момент оказания услуг. По медицинским показаниям и/или с согласия Пациента ему могут быть оказаны и иные услуги, стоимость которых согласовывается Клиникой «РЕАМЕД» с Пациентом или его представителем дополнительно.</p>
+                <p>2.4. Пациент соглашается с тем, что проводимое лечение Клиникой «РЕАМЕД» не может полностью гарантировать достижение эффекта, так как при оказании медицинских услуг и после них, как в ближайшем, так и в отдаленном периоде возможны различные осложнения, а также с тем, что используемая технология медицинской помощи не может полностью исключить вероятность возникновения побочных эффектов и осложнений, обусловленных биологическими особенностями организма.</p>
+                <p>2.5. При исполнении настоящего Договора стороны руководствуются действующим законодательством, регулирующим предоставление платных медицинских услуг населению медицинскими учреждениями.</p>
+
+                <h3>3. Права и обязанности сторон</h3>
+                <h4>3.1. Клиника «РЕАМЕД» имеет право:</h4>
+                <ul>
+                    <li>Самостоятельно определять характер и объем исследований и манипуляций, необходимых для установления диагноза, профилактики и лечения Пациента.</li>
+                    <li>Вносить изменения в прейскурант услуг. Прейскурант является официальным документом Клиники «РЕАМЕД», содержит полный перечень услуг, оказание которых возможно в рамках настоящего договора.</li>
+                    <li>Не приступать к оказанию медицинских услуг или перенести срок оказания таких услуг на другое время, если Пациент не оплатил или не полностью оплатил медицинскую услугу.</li>
+                    <li>При необходимости привлекать третьих лиц (медицинских специалистов, медицинские учреждения) для оказания услуг Пациенту.</li>
+                    <li>Вносить изменения в план лечения и проводить дополнительное лечение, уведомив об этом Пациента и получив в необходимых случаях согласие Пациента.</li>
+                    <li>В случае непредвиденного отсутствия лечащего врача в день, назначенный для проведения медицинской услуги, Клиника «РЕАМЕД» вправе назначить другого врача с согласия Пациента.</li>
+                    <li>Отказаться от предоставления Пациенту услуг, предусмотренных настоящим Договором в случае: невозможности обеспечения безопасного оказания медицинской услуги; отсутствия необходимых специалистов, оборудования, инструментария; при выявлении у Пациента заболевания, лечение которого возможно лишь в специализированных медицинских учреждениях; если медицинское вмешательство, по мнению врача, сопряжено с неоправданным риском причинения вреда здоровью Пациента или угрожает жизни Пациента; невыполнения Пациентом условий настоящего Договора.</li>
+                </ul>
+
+                <h4>3.2. Клиника «РЕАМЕД» обязуется:</h4>
+                <ul>
+                    <li>Своевременно и качественно оказывать услуги в соответствии с условиями настоящего Договора и с соблюдением требований действующего законодательства при условии, что Пациент даст на это Информированное добровольное согласие.</li>
+                    <li>В своей деятельности по оказанию медицинских услуг использовать методы профилактики, диагностики, лечения, медицинские технологии, лекарственные средства, иммунобиологические препараты и дезинфекционные средства, разрешенные к применению в установленном действующим законодательством порядке.</li>
+                    <li>Обеспечить Пациента информацией, включающей в себя сведения о месте оказания услуг, режиме работы Клиники «РЕАМЕД», перечне услуг с указанием их стоимости, об условиях предоставления и получения этих услуг, а также сведения о квалификации и сертификации специалистов Клиники «РЕАМЕД».</li>
+                    <li>Предоставлять Пациенту полную информацию о назначениях, методах лечения, действиях применяемых препаратов, возможных последствиях, а также рекомендациях, которые необходимо соблюдать для сохранения достигнутого результата лечения.</li>
+                    <li>Обеспечить выполнение принятых на себя обязательств по оказанию услуг силами собственных специалистов и/или сотрудников медицинских учреждений, имеющих с Клиникой «РЕАМЕД» договорные отношения.</li>
+                    <li>Обеспечить Пациенту непосредственное ознакомление с медицинской документацией, отражающей состояние его здоровья, и выдать по письменному требованию Пациента или его представителя копии медицинских документов, отражающих состояние здоровья Пациента.</li>
+                    <li>Обеспечить режим конфиденциальности о состоянии здоровья Пациента в соответствии с п.6 настоящего договора и законодательства о врачебной тайне.</li>
+                </ul>
+
+                <h4>3.3. Пациент имеет право:</h4>
+                <ul>
+                    <li>Пациент имеет право в доступной для него форме получить имеющуюся информацию о состоянии своего здоровья, включая сведения о результатах обследования, наличии заболевания, его диагнозе и прогнозе, методах лечения, связанном с ними риске, возможных вариантах медицинского вмешательства, их последствиях и результатах проведенного лечения.</li>
+                    <li>Пациент имеет право на информированное добровольное согласие на медицинское вмешательство. В случаях, когда состояние Пациента не позволяет ему выразить свою волю, а медицинское вмешательство неотложно, вопрос о его проведении в интересах Пациента решает консилиум, а в особых случаях лечащий (дежурный) врач. Отказ от медицинского вмешательства с указанием возможных последствий оформляется записью в медицинской документации и подписывается Пациентом или его представителем, а также медицинским работником.</li>
+                    <li>Самостоятельно, на основе действующего прейскуранта, определять перечень услуг, которые он желает получить в рамках настоящего договора, с учетом рекомендаций, полученных от медицинского персонала Клиники «РЕАМЕД».</li>
+                    <li>По требованию Пациента настоящий договор может быть предоставлен ему в печатной форме.</li>
+                    <li>Получить копию медицинской документации на бумажном носителе по документу, удостоверяющему личность.</li>
+                    <li>Обратиться к руководству Клиники «РЕАМЕД» с предложениями, жалобами, в том числе в случае претензий по объему и качеству оказанных медицинских услуг.</li>
+                    <li>Пациент вправе отказаться от исполнения настоящего договора в порядке, установленном действующим законодательством.</li>
+                </ul>
+
+                <h4>3.4. Пациент обязан:</h4>
+                <ul>
+                    <li>Пациент обязуется своевременно оплачивать услуги Клиники «РЕАМЕД» в соответствии с условиями статьи 5 настоящего Договора.</li>
+                    <li>Пациент обязуется заблаговременно информировать Клинику «РЕАМЕД» о необходимости отмены или изменении назначенного ему времени получения услуги.</li>
+                    <li>Пациент обязан строго исполнять рекомендации и требования лечащего врача, а также информировать последнего об известных Пациенту аллергических реакциях на какие-либо лекарственные препараты, о перенесенных заболеваниях и возникших вследствие этого осложнениях.</li>
+                    <li>Пациент обязуется предоставить Клинике «РЕАМЕД» свои персональные данные в соответствии с п.6.1. настоящего Договора, надлежащим образом исполнять условия настоящего Договора и своевременно информировать Клинику «РЕАМЕД» о любых обстоятельствах, препятствующих исполнению Пациентом настоящего Договора.</li>
+                    <li>Пациенту при посещении Клиники «РЕАМЕД» запрещается: курить в помещении Клиники «РЕАМЕД», пользоваться открытым пламенем (спичками, зажигалкой и пр.), приносить с собой легковоспламеняющиеся и горючие жидкости, приходить в состоянии алкогольного, наркологического, токсического опьянения.</li>
+                </ul>
+
+                <h3>4. Условия и порядок оказания услуг</h3>
+                <p>4.1. Клиника «РЕАМЕД» оказывает услуги по настоящему Договору в помещениях Клиники «РЕАМЕД», а также в медицинских учреждениях, имеющих с Клиникой «РЕАМЕД» соответствующие договоры.</p>
+                <p>4.2. Клиника «РЕАМЕД» оказывает услуги по настоящему Договору в дни и часы работы, которые устанавливаются администрацией Клиники «РЕАМЕД» и доводятся до сведения Пациента.</p>
+                <p>4.3. Предоставление услуг по настоящему Договору происходит в порядке предварительной записи Пациента на прием (определение времени получения услуги).</p>
+                <p>4.4. В случае опоздания Пациента более чем на 15 (пятнадцать) минут по отношению к назначенному Пациенту времени получения услуги, Клиника «РЕАМЕД» оставляет за собой право на перенос или отмену записи Пациента на прием.</p>
+                <p>4.5. Клиника «РЕАМЕД» оставляет за собой право изменять время оказания услуг по предварительному согласованию с Пациентом, а также право внеочередного приема Пациента с симптомами острого заболевания.</p>
+
+                <h3>5. Порядок расчетов</h3>
+                <p>5.1. Оплата услуг по настоящему Договору производится Пациентом на условиях 100% предоплаты до оказания услуги, если иной порядок не предусмотрен дополнительным соглашением сторон.</p>
+                <p>5.2. Оплата услуг Клиники «РЕАМЕД» осуществляется Пациентом путем внесения наличных денежных средств или посредством банковской пластиковой карты через кассу Клиники «РЕАМЕД», либо по безналичному расчету путем перечисления денежных средств на расчетный счет Клиники «РЕАМЕД».</p>
+                <p>5.3. Оказываемые по настоящему Договору услуги могут быть оплачены за Пациента иным физическим или юридическим лицом.</p>
+
+                <h3>6. Конфиденциальность</h3>
+                <p>6.1. В целях исполнения настоящего Договора публичной оферты (предложения) в соответствии с пунктом 5 статьи 6, а также статьями 9, 10 Федерального закона от 27.07.06 г. “О персональных данных” № 152-ФЗ, на период действия настоящего Договора Пациент предоставляет Клинике «РЕАМЕД» свои персональные данные (в том числе фамилия, имя, отчество, дата рождения, данные документа, удостоверяющего личность, адрес регистрации и адрес проживания, контактные данные и прочее) и дает свое согласие на обработку персоналом Клиники «РЕАМЕД» своих персональных данных, а также специальных персональных данных, касающихся состояния здоровья Пациента, в целях получения услуг, оказываемых Клиникой «РЕАМЕД». Указанное согласие предоставляется на осуществление любых действий в отношении персональных данных Пациента, которые необходимы для достижения вышеуказанных целей, включая без ограничения: сбор, систематизацию, накопление, хранение, уточнение (обновление, изменение), использование, распространение (в том числе передача), обезличивание, блокирование, уничтожение, а также осуществление любых иных действий с персональными данными в соответствии с действующим законодательством.</p>
+                <p>6.2. Стороны принимают взаимные обязательства по сохранению в тайне любой информации, полученной от другой Стороны при исполнении условий настоящего договора.</p>
+                <p>6.3. Конфиденциальной, согласно настоящему договору, считается информация: информация о состоянии здоровья Пациента, диагнозе, методах лечения, а также иная информация, полученная во время его обследования и лечения (врачебная тайна); об оплатах услуг, произведенных Пациентом.</p>
+
+                <h3>7. Ответственность сторон</h3>
+                <p>7.1. Сторона, не исполнившая или ненадлежащим образом исполнившая обязательства по настоящему Договору, несет ответственность в соответствии с действующим законодательством РФ.</p>
+                <p>7.2. Клиника «РЕАМЕД» освобождается от ответственности за неисполнение или ненадлежащее исполнение настоящего Договора, причиной которого стало нарушение Пациентом условий настоящего Договора, а также по иным основаниям, предусмотренным законодательством РФ.</p>
+                <p>7.3. При возникновении задолженности Пациента за оказанные услуги Клиникой «РЕАМЕД», последний имеет право приостановить дальнейшее оказание услуг по настоящему Договору до полной оплаты Пациентом уже оказанных Клиникой «РЕАМЕД» услуг.</p>
+                <p>7.4. В случае невыполнения Пациентом два и более раз рекомендаций и требований медицинского персонала Клиники «РЕАМЕД», последний имеет право расторгнуть настоящий Договор в одностороннем внесудебном порядке.</p>
+
+                <h3>8. Рассмотрение споров</h3>
+                <p>8.1. Все споры, вытекающие из настоящего Договора, разрешаются сторонами путем переговоров. В случае невозможности урегулирования споров путем переговоров, все споры сторон по настоящему договору и в связи с ним, по которым стороны не могут прийти к обоюдному согласию, подлежат разрешению в судебном порядке в соответствии с действующим законодательством РФ.</p>
+
+                <h3>9. Сведения о Клинике «РЕАМЕД»</h3>
+                <p><strong>Наименование:</strong> ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ “РЕАМЕД”<br>
+                <strong>Адрес:</strong> 423465, Республика Татарстан, город Альметьевск, ул. Чехова, д. 2, помещение 1000<br>
+                <strong>ИНН:</strong> 1644090460; <strong>КПП:</strong> 164401001; <strong>ОГРН:</strong> 1171690076690<br>
+                <strong>р/счет:</strong> 40702810945840002139 в ПАО «АК БАРС» БАНК г. Казань<br>
+                <strong>Кор.счёт:</strong> 30101810000000000805, <strong>БИК:</strong> 049205805<br>
+                <strong>Конт. телефоны:</strong> 8(8553) 39-99-39</p>
+                <p><strong>Директор:</strong> Мирзин Рустем Талегатович.</p>
+
+                <div class="info-note">
+                    <i class="fas fa-gavel"></i>
+                    <strong>Юридическая сила:</strong> Настоящий договор вступает в силу с момента акцепта и действует до полного исполнения сторонами обязательств.
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Футер -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>ООО «Реамед»</h4>
+                <p>Лицензия Л041-01181-16/00344835 от 07.09.2020</p>
+                <p><i class="fas fa-phone-alt"></i> +7 (8553) 39-99-39</p>
+                <p><i class="far fa-envelope"></i> info@reamedalmet.ru</p>
+            </div>
+            <div class="footer-col">
+                <h4>Пациентам</h4>
+                <ul class="footer-links">
+                    <li><a href="./oferta.html">Договор оферты</a></li>
+                    <li><a href="./policy.html">Политика обработки данных</a></li>
+                    <li><a href="./nalog.html">Налоговый вычет</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            2025 © ООО «Реамед». Все права защищены. Информация на сайте не является публичной офертой.
+        </div>
+    </div>
+</footer>
+
+<!-- МОДАЛЬНОЕ ОКНО (единый стиль с диагностикой) -->
+<div class="modal-overlay" id="appointmentModal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <div class="modal-close" id="closeModalBtn"><i class="fas fa-times"></i></div>
+            <h3><i class="fas fa-calendar-check"></i> Запись на приём</h3>
+            <p><i class="fas fa-stethoscope"></i> Онлайн-запись в клинику «Реамед»</p>
+        </div>
+        <div class="modal-body">
+            <form id="modalForm">
+                <div class="form-group">
+                    <label>Ваше имя *</label>
+                    <input type="text" id="userName" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                    <label>Телефон *</label>
+                    <input type="tel" id="userPhone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label>Желаемая дата</label>
+                    <input type="date" id="userDate">
+                </div>
+                <button type="submit" class="modal-submit">Отправить заявку <i class="fas fa-paper-plane"></i></button>
+                <div class="modal-footer-note">Нажимая «Отправить», вы соглашаетесь с политикой обработки данных. Администратор свяжется с вами в течение 15 минут.</div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Модальное окно — полная интеграция в стиле диагностики
+    const modalOverlay = document.getElementById('appointmentModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const onlineBtn = document.getElementById('onlineAppointmentBtn');
+
+    function openModal() {
+        modalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Кнопка в навигации "Онлайн-запись"
+    if (onlineBtn) {
+        onlineBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+        });
+    }
+
+    // Закрытие по крестику и оверлею
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal();
+    });
+
+    // Отправка формы модалки
+    const modalForm = document.getElementById('modalForm');
+    modalForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('userName').value.trim();
+        const phone = document.getElementById('userPhone').value.trim();
+        const date = document.getElementById('userDate').value;
+        if (!name || !phone) {
+            alert('Пожалуйста, заполните имя и номер телефона');
+            return;
+        }
+        alert(`Спасибо, ${name}! Ваша заявка на запись принята. Мы свяжемся с вами по номеру ${phone} в ближайшее время.${date ? ` Предварительная дата: ${date}` : ''}`);
+        closeModal();
+        modalForm.reset();
+    });
+
+    // Плавная прокрутка к якорям
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if(href !== "#" && href !== "#onlineAppointmentBtn" && href !== "" && href !== "#") {
+                const target = document.querySelector(href);
+                if(target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Онлайн-запись на приём - Реамед | Современный дизайн</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background: #f5f7fb;
+        color: #1e293b;
+        line-height: 1.5;
+      }
+
+      /* Контейнеры */
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* ========== ВЕРХНЯЯ ПЛАШКА ========== */
+      .top-bar {
+        background-color: #f8fafc;
+        border-bottom: 1px solid #e9eef3;
+        font-size: 14px;
+        padding: 10px 0;
+      }
+
+      .top-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .top-contacts {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .top-contacts a,
+      .top-contacts span {
+        color: #334155;
+        text-decoration: none;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .top-contacts a:hover {
+        color: #1e4a8a;
+      }
+
+      .social-icons a {
+        color: #334155;
+        font-size: 18px;
+        transition: color 0.2s;
+      }
+
+      .social-icons a:hover {
+        color: #1e4a8a;
+      }
+
+      /* ========== ОСНОВНОЙ ХЕДЕР ========== */
+      .main-header {
+        background: white;
+        padding: 20px 0;
+        border-bottom: 1px solid #eef2f6;
+      }
+
+      .main-header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+
+      .logo img {
+        display: block;
+        height: 44px;
+        width: auto;
+      }
+
+      .header-contacts {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+
+      .contact-block {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .contact-block i {
+        font-size: 28px;
+        color: #1e4a8a;
+      }
+
+      .contact-info .label {
+        font-size: 13px;
+        color: #5b6e8c;
+        letter-spacing: 0.3px;
+      }
+
+      .contact-info a {
+        font-weight: 700;
+        font-size: 18px;
+        color: #0f2b4d;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .contact-info a:hover {
+        color: #2563eb;
+      }
+
+      /* ========== НАВИГАЦИЯ ========== */
+      .nav-menu {
+        background: white;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 1px 6px rgba(0, 0, 0, 0.02);
+        border-bottom: 1px solid #eef2f6;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(2px);
+        background-color: rgba(255, 255, 255, 0.98);
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        gap: 8px;
+        padding: 0;
+        margin: 0;
+      }
+
+      .nav-links li a {
+        display: inline-block;
+        padding: 16px 12px;
+        font-weight: 500;
+        font-size: 15px;
+        color: #1e2f44;
+        text-decoration: none;
+        transition: all 0.2s;
+        border-radius: 8px;
+      }
+
+      .nav-links li.active a,
+      .nav-links li a:hover {
+        color: #1e4a8a;
+        background-color: #f0f4fe;
+      }
+
+      .btn-online {
+        background: linear-gradient(105deg, #1e4a8a 0%, #2563eb 100%);
+        color: white !important;
+        padding: 8px 16px !important;
+        border-radius: 40px !important;
+        font-weight: 600 !important;
+        margin-left: 12px;
+        transition: transform 0.1s, box-shadow 0.2s;
+        box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+        margin-top: 8px;
+      }
+
+      .btn-online i {
+        margin-right: 8px;
+      }
+
+      .btn-online:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+        background: linear-gradient(105deg, #1e4a8a, #2b6ef0);
+      }
+
+      /* ========== СТРАНИЦА ЗАЯВКИ: СОВРЕМЕННЫЙ БЛОК ========== */
+      .appointment-hero {
+        padding: 48px 0 32px;
+        background: linear-gradient(135deg, #f8fafd 0%, #ffffff 100%);
+      }
+
+      .page-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #1e293b, #2d3a4f);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        letter-spacing: -0.01em;
+        margin-bottom: 12px;
+      }
+
+      .title-accent {
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #2563eb, #60a5fa);
+        border-radius: 4px;
+        margin-top: 8px;
+      }
+
+      /* Современная карточка формы */
+      .form-card {
+        background: #ffffff;
+        border-radius: 32px;
+        box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08),
+          0 1px 3px rgba(0, 0, 0, 0.02);
+        padding: 32px 40px;
+        margin-bottom: 48px;
+        transition: all 0.2s;
+        border: 1px solid rgba(226, 232, 240, 0.6);
+      }
+
+      /* Табы */
+      .tabs-container {
+        display: flex;
+        gap: 8px;
+        background: #f1f5f9;
+        padding: 6px;
+        border-radius: 60px;
+        margin-bottom: 32px;
+        width: fit-content;
+      }
+
+      .tab-btn {
+        padding: 10px 24px;
+        border: none;
+        background: transparent;
+        font-weight: 600;
+        font-size: 0.95rem;
+        border-radius: 40px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        color: #475569;
+      }
+
+      .tab-btn.active {
+        background: white;
+        color: #1e4a8a;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+      }
+
+      .tab-pane {
+        display: none;
+        animation: fade 0.25s ease;
+      }
+
+      .tab-pane.active-pane {
+        display: block;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(5px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Стилизация полей формы */
+      .wpcf7 {
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+        max-width: 100%;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      .full-width {
+        grid-column: span 2;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .form-group label {
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: #1e293b;
+      }
+
+      .wpcf7-form-control-wrap {
+        width: 100%;
+      }
+
+      input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
+      select,
+      textarea {
+        width: 100%;
+        padding: 14px 18px;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 20px;
+        font-size: 1rem;
+        transition: all 0.2s;
+        background-color: #ffffff;
+        font-family: inherit;
+        outline: none;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+      }
+
+      /* кастомный селект */
+      select {
+        appearance: none;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23334155' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+        background-repeat: no-repeat;
+        background-position: right 18px center;
+      }
+
+      /* чекбокс согласия */
+      .wpcf7-acceptance {
+        margin-top: 16px;
+      }
+
+      .wpcf7-list-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .wpcf7-list-item input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        accent-color: #2563eb;
+        margin: 0;
+      }
+
+      .wpcf7-list-item-label {
+        font-size: 0.85rem;
+        color: #475569;
+      }
+
+      .wpcf7-list-item-label a {
+        color: #1e4a8a;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      /* кнопка отправки */
+      .wpcf7 input[type="submit"] {
+        background: linear-gradient(105deg, #1e4a8a, #2563eb);
+        color: white;
+        border: none;
+        padding: 14px 28px;
+        border-radius: 40px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.2s;
+        width: auto;
+        min-width: 200px;
+        box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+      }
+
+      .wpcf7 input[type="submit"]:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 20px -8px rgba(37, 99, 235, 0.4);
+        background: linear-gradient(105deg, #1e4a8a, #3b82f6);
+      }
+
+      /* скрываем служебный agree (был в исходнике) */
+      .agree,
+      .wpcf7-form-control-wrap.agree {
+        display: none;
+      }
+
+      /* сообщения */
+      .wpcf7-response-output {
+        border-radius: 20px;
+        padding: 14px 20px;
+        margin-top: 20px;
+      }
+
+      hr {
+        margin: 24px 0;
+        border: none;
+        border-top: 1px solid #eef2f6;
+      }
+
+      /* футер */
+      .footer {
+        background: #0f172a;
+        color: #e2e8f0;
+        padding: 48px 0 24px;
+        margin-top: 40px;
+        border-top: 1px solid #1e293b;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-col h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: white;
+      }
+
+      .footer-col p,
+      .footer-links li a {
+        color: #cbd5e1;
+        text-decoration: none;
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 8px;
+      }
+
+      .footer-links li a:hover {
+        color: white;
+      }
+
+      .copyright {
+        text-align: center;
+        font-size: 0.8rem;
+        padding-top: 24px;
+        border-top: 1px solid #1e293b;
+        color: #94a3b8;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 20px;
+        }
+        .form-card {
+          padding: 24px;
+        }
+        .form-grid {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+        .full-width {
+          grid-column: span 1;
+        }
+        .tabs-container {
+          width: 100%;
+          justify-content: space-between;
+        }
+        .tab-btn {
+          flex: 1;
+          text-align: center;
+          padding: 8px 12px;
+          font-size: 0.85rem;
+        }
+        .page-title {
+          font-size: 1.8rem;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .form-card {
+          padding: 48px 56px;
+        }
+      }
+
+      /* скрываем заголовок CF7 встроенный, оставляем наш */
+      .gdlr-core-title-item {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Верхняя плашка -->
+    <div class="top-bar">
+      <div class="container">
+        <div class="top-contacts">
+          <a href="mailto:info@reamedalmet.ru"
+            ><i class="far fa-envelope"></i> info@reamedalmet.ru</a
+          >
+          <span><i class="far fa-clock"></i> Ежедневно с 8:00 до 20:00</span>
+        </div>
+        <div class="social-icons">
+          <a href="https://vk.com/reamedalmet" target="_blank"
+            ><i class="fab fa-vk"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Основной хедер -->
+    <header class="main-header">
+      <div class="container">
+        <a href="/" class="logo">
+          <img
+            src="https://reamedalmet.ru/wp-content/uploads/2023/11/logo-1.png"
+            alt="Реамед"
+            width="168"
+            height="44"
+          />
+        </a>
+        <div class="header-contacts">
+          <div class="contact-block">
+            <i class="fas fa-phone-alt"></i>
+            <div class="contact-info">
+              <div class="label">Прием врачей / Медосмотры</div>
+              <a href="tel:+78553399939">+7 (8553) 39-99-39</a>
+            </div>
+          </div>
+          <div class="contact-block">
+            <i class="fas fa-stethoscope"></i>
+            <div class="contact-info">
+              <div class="label">Наркология</div>
+              <a href="tel:+78553440404">+7 (8553) 44-04-04</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Навигация -->
+    <div class="nav-menu">
+      <div class="container">
+        <ul class="nav-links">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="./specialist.html">Специалисты</a></li>
+          <li><a href="./uslugi.html">Услуги</a></li>
+          <li><a href="./contact.html">Контакты</a></li>
+          <li><a href="./vacancy2.html">Вакансии</a></li>
+          <li class="active">
+            <a href="./zayavka.html" class="btn-online" id="onlineAppointmentBtn"
+              ><i class="fas fa-calendar-check"></i> Онлайн-запись</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ: страница записи -->
+    <div class="appointment-hero">
+      <div class="container">
+        <div class="form-card">
+          <div style="margin-bottom: 8px">
+            <h1 class="page-title">Онлайн-запись на приём</h1>
+            <div class="title-accent"></div>
+            <p style="color: #4b5563; margin-top: 12px">
+              Заполните форму, и администратор свяжется с вами для подтверждения
+              времени.
+            </p>
+          </div>
+
+          <!-- Табы для выбора способа записи (специалист / направление) -->
+          <div class="tabs-container">
+            <button class="tab-btn active" data-tab="tab-specialist">
+              👨‍⚕️ Выбрать специалиста
+            </button>
+            <button class="tab-btn" data-tab="tab-direction">
+              📋 По направлению / услуге
+            </button>
+          </div>
+
+          <!-- CF7 форма (оригинальная структура, обёрнутая в два блока) -->
+          <div
+            role="form"
+            class="wpcf7"
+            id="wpcf7-f10563-p10487-o1"
+            lang="ru-RU"
+            dir="ltr"
+          >
+            <form
+              action="/online/#wpcf7-f10563-p10487-o1"
+              method="post"
+              class="wpcf7-form init"
+              novalidate="novalidate"
+            >
+              <div style="display: none">
+                <input type="hidden" name="_wpcf7" value="10563" />
+                <input type="hidden" name="_wpcf7_version" value="5.3.2" />
+                <input type="hidden" name="_wpcf7_locale" value="ru_RU" />
+                <input
+                  type="hidden"
+                  name="_wpcf7_unit_tag"
+                  value="wpcf7-f10563-p10487-o1"
+                />
+                <input
+                  type="hidden"
+                  name="_wpcf7_container_post"
+                  value="10487"
+                />
+                <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+                <input
+                  type="hidden"
+                  name="_wpcf7cf_hidden_group_fields"
+                  value="[]"
+                />
+                <input type="hidden" name="_wpcf7cf_hidden_groups" value="[]" />
+                <input
+                  type="hidden"
+                  name="_wpcf7cf_visible_groups"
+                  value="[]"
+                />
+                <input type="hidden" name="_wpcf7cf_repeaters" value="[]" />
+                <input type="hidden" name="_wpcf7cf_steps" value="{}" />
+              </div>
+              <div hidden>
+                <span class="wpcf7-form-control-wrap utm_source"
+                  ><input type="text" name="utm_source" value=""
+                /></span>
+                <span class="wpcf7-form-control-wrap utm_medium"
+                  ><input type="text" name="utm_medium" value=""
+                /></span>
+                <span class="wpcf7-form-control-wrap utm_campaign"
+                  ><input type="text" name="utm_campaign" value=""
+                /></span>
+              </div>
+              <p style="display: none">
+                <span class="wpcf7-form-control-wrap agree"
+                  ><span class="wpcf7-form-control wpcf7-acceptance invert"
+                    ><span class="wpcf7-list-item"
+                      ><input
+                        type="checkbox"
+                        name="agree"
+                        value="1"
+                        checked
+                        class="agree" /></span></span
+                ></span>
+              </p>
+
+              <div class="form-grid">
+                <div class="form-group full-width">
+                  <label>Ваше имя *</label>
+                  <span class="wpcf7-form-control-wrap your-name"
+                    ><input type="text" name="your-name" required
+                  /></span>
+                </div>
+                <div class="form-group full-width">
+                  <label>Ваш телефон *</label>
+                  <span class="wpcf7-form-control-wrap mask-110"
+                    ><input
+                      type="tel"
+                      name="mask-110"
+                      class="cpnd-phone"
+                      placeholder="+7 (___) ___-__-__"
+                      required
+                  /></span>
+                </div>
+
+                <!-- Вкладка "Специалист" -->
+                <div
+                  id="tab-specialist"
+                  class="tab-pane active-pane full-width"
+                  style="grid-column: span 2"
+                >
+                  <div class="form-group">
+                    <label>Выберите специалиста</label>
+                    <span class="wpcf7-form-control-wrap spec-type">
+                      <select name="spec-type">
+                        <option value="">-- Выберите специалиста --</option>
+                        <option
+                          value="Абдурахимов Олимназар Хужамуратович (Уролог, хируг, УЗИ)"
+                        >
+                          Абдурахимов Олимназар Хужамуратович (Уролог, хируг,
+                          УЗИ)
+                        </option>
+                        <option
+                          value="Абдуллина Айгуль Замировна (Офтальмолог)"
+                        >
+                          Абдуллина Айгуль Замировна (Офтальмолог)
+                        </option>
+                        <option
+                          value="Авзалова Гульнара Идрисовна (Офтальмолог)"
+                        >
+                          Авзалова Гульнара Идрисовна (Офтальмолог)
+                        </option>
+                        <option
+                          value="Ахметова Наиля Нурмухаметовна (Гинеколог, хирург)"
+                        >
+                          Ахметова Наиля Нурмухаметовна (Гинеколог, хирург)
+                        </option>
+                        <option
+                          value="Ахметшина Алия Маратовна (Оториноларинголог)"
+                        >
+                          Ахметшина Алия Маратовна (Оториноларинголог)
+                        </option>
+                      </select>
+                    </span>
+                    <small style="color: #6b7280"
+                      >* можно оставить поле пустым, если выбрали направление
+                      ниже</small
+                    >
+                  </div>
+                </div>
+
+                <!-- Вкладка "Направление" -->
+                <div
+                  id="tab-direction"
+                  class="tab-pane full-width"
+                  style="grid-column: span 2"
+                >
+                  <div class="form-group">
+                    <label>Выберите отделение / направление</label>
+                    <span class="wpcf7-form-control-wrap naprav-type">
+                      <select name="naprav-type">
+                        <option value="">-- Выберите направление --</option>
+                        <option value="Аллергология">Аллергология</option>
+                        <option value="Гинекология">Гинекология</option>
+                        <option value="Кардиология">Кардиология</option>
+                        <option value="Неврология">Неврология</option>
+                        <option value="Оториноларингология">
+                          Оториноларингология
+                        </option>
+                        <option value="Терапия">Терапия</option>
+                        <option value="УЗИ">УЗИ</option>
+                        <option value="Хирургия">Хирургия</option>
+                      </select>
+                    </span>
+                  </div>
+                  <!-- Группы условных полей (оригинал, оставлены для корректной работы conditional logic) -->
+                  <div
+                    data-id="naprav-lor-selected"
+                    data-class="wpcf7cf_group"
+                    style="display: none"
+                  >
+                    <label
+                      >Выберите услугу:
+                      <span class="wpcf7-form-control-wrap usluga-lor"
+                        ><select name="usluga-lor">
+                          <option>Консультация ЛОР-врача</option>
+                        </select></span
+                      ></label
+                    >
+                  </div>
+                  <div
+                    data-id="naprav-terapevt-selected"
+                    data-class="wpcf7cf_group"
+                    style="display: none"
+                  >
+                    <label
+                      >Выберите услугу:
+                      <span class="wpcf7-form-control-wrap usluga-terapevt"
+                        ><select name="usluga-terapevt">
+                          <option>Консультация терапевта</option>
+                        </select></span
+                      ></label
+                    >
+                  </div>
+                  <div
+                    data-id="naprav-uzi-selected"
+                    data-class="wpcf7cf_group"
+                    style="display: none"
+                  >
+                    <label
+                      >Выберите услугу:
+                      <span class="wpcf7-form-control-wrap usluga-uzi"
+                        ><select name="usluga-uzi">
+                          <option>УЗИ органов брюшной полости</option>
+                        </select></span
+                      ></label
+                    >
+                  </div>
+                  <!-- прочие динамические блоки оставлены из исходной версии, но для краткости CSS скрывает их изначально — conditional fields plugin доработает -->
+                </div>
+
+                <div class="form-group full-width">
+                  <label>Комментарий к записи</label>
+                  <span class="wpcf7-form-control-wrap comment"
+                    ><input
+                      type="text"
+                      name="comment"
+                      placeholder="Укажите удобное время или дополнительные пожелания"
+                  /></span>
+                </div>
+
+                <div class="form-group full-width">
+                  <span class="wpcf7-form-control-wrap acceptance-638">
+                    <span class="wpcf7-form-control wpcf7-acceptance">
+                      <span class="wpcf7-list-item">
+                        <label>
+                          <input
+                            type="checkbox"
+                            name="acceptance-638"
+                            value="1"
+                            required
+                          />
+                          <span class="wpcf7-list-item-label"
+                            >Я принимаю условия
+                            <b
+                              ><a
+                                href="https://reamedalmet.ru/privacy/"
+                                target="_blank"
+                                >пользовательского соглашения и политику
+                                конфиденциальности</a
+                              ></b
+                            ></span
+                          >
+                        </label>
+                      </span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  justify-content: flex-end;
+                  margin-top: 20px;
+                "
+              >
+                <input
+                  type="submit"
+                  value="Записаться на приём"
+                  class="wpcf7-form-control wpcf7-submit"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Футер (аналогичный главной) -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>ООО «Реамед»</h4>
+            <p>Лицензия Л041-01181-16/00344835 от 07.09.2020</p>
+            <p><i class="fas fa-phone-alt"></i> +7 (8553) 39-99-39</p>
+            <p><i class="far fa-envelope"></i> info@reamedalmet.ru</p>
+          </div>
+          <div class="footer-col">
+            <h4>Пациентам</h4>
+            <ul class="footer-links">
+              <li><a href="./oferta.html">Договор оферты</a></li>
+              <li><a href="./policy.html">Политика обработки данных</a></li>
+              <li><a href="./nalog.html">Налоговый вычет</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          2025 © ООО «Реамед». Все права защищены. Информация на сайте не
+          является публичной офертой.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Переключение табов (специалист / направление) для современного UX
+      (function () {
+        const tabs = document.querySelectorAll(".tab-btn");
+        const paneSpecialist = document.getElementById("tab-specialist");
+        const paneDirection = document.getElementById("tab-direction");
+
+        function activateTab(tabId) {
+          tabs.forEach((btn) => btn.classList.remove("active"));
+          const activeBtn = Array.from(tabs).find(
+            (btn) => btn.dataset.tab === tabId
+          );
+          if (activeBtn) activeBtn.classList.add("active");
+          if (tabId === "tab-specialist") {
+            paneSpecialist.classList.add("active-pane");
+            paneDirection.classList.remove("active-pane");
+          } else {
+            paneDirection.classList.add("active-pane");
+            paneSpecialist.classList.remove("active-pane");
+          }
+        }
+
+        tabs.forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            const target = btn.dataset.tab;
+            if (target) activateTab(target);
+          });
+        });
+        // по умолчанию активен специалист (уже есть класс active-pane у specialist)
+      })();
+
+      // Маска телефона для поля mask-110 (как на исходной странице)
+      (function () {
+        const phoneInput = document.querySelector('input[name="mask-110"]');
+        if (phoneInput && typeof Inputmask !== "undefined") {
+          Inputmask({
+            mask: "+7 (999) 999-99-99",
+            showMaskOnHover: false,
+            clearIncomplete: true,
+          }).mask(phoneInput);
+        } else if (phoneInput) {
+          // fallback простой
+          phoneInput.addEventListener("input", function (e) {
+            let val = this.value.replace(/\D/g, "");
+            if (val.length === 0) this.value = "";
+            else if (val.length <= 1) this.value = "+7";
+            else if (val.length <= 4) this.value = "+7 (" + val.slice(1, 4);
+            else if (val.length <= 7)
+              this.value = "+7 (" + val.slice(1, 4) + ") " + val.slice(4, 7);
+            else if (val.length <= 9)
+              this.value =
+                "+7 (" +
+                val.slice(1, 4) +
+                ") " +
+                val.slice(4, 7) +
+                "-" +
+                val.slice(7, 9);
+            else
+              this.value =
+                "+7 (" +
+                val.slice(1, 4) +
+                ") " +
+                val.slice(4, 7) +
+                "-" +
+                val.slice(7, 9) +
+                "-" +
+                val.slice(9, 11);
+          });
+        }
+      })();
+
+      // подстраховка для cf7 conditional fields (сохраняем скрытые поля, они будут работать)
+      // дополнительно скрываем служебный agree
+      const agreeWrap = document.querySelector(
+        ".wpcf7-form-control-wrap.agree"
+      );
+      if (agreeWrap) agreeWrap.style.display = "none";
+    </script>
+    <!-- библиотека Inputmask (необязательно, но подключаем для маски) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/jquery.inputmask.min.js"></script>
+    <script>
+      if (typeof Inputmask !== "undefined") {
+        Inputmask({ mask: "+7 (999) 999-99-99" }).mask(
+          document.querySelector('input[name="mask-110"]')
+        );
+      }
+    </script>
+  </body>
+</html>

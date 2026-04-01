@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Реамед | Современная медицина для всей семьи в Альметьевске</title>
+  <meta name="description" content="Сеть медицинских центров «Реамед» в Альметьевске: консультации специалистов, диагностика, хирургия, косметология, медосмотры. Современное оборудование, высококвалифицированные врачи.">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #ffffff;
+      color: #1a2c3e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    h1, h2, h3, .logo, .nav-link, .btn {
+      font-family: "Outfit", sans-serif;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subhead {
+      font-size: 1.125rem;
+      color: #475569;
+      max-width: 640px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ========== ВЕРХНЯЯ ПЛАШКА ========== */
+    .top-bar {
+      background-color: #f8fafc;
+      border-bottom: 1px solid #e9eef3;
+      font-size: 14px;
+      padding: 10px 0;
+    }
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .top-contacts {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .top-contacts a, .top-contacts span {
+      color: #334155;
+      text-decoration: none;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .top-contacts a:hover {
+      color: #1e4a8a;
+    }
+    .social-icons a {
+      color: #334155;
+      font-size: 18px;
+      transition: color 0.2s;
+    }
+    .social-icons a:hover {
+      color: #1e4a8a;
+    }
+
+    /* ========== ОСНОВНОЙ ХЕДЕР ========== */
+    .main-header {
+      background: white;
+      padding: 20px 0;
+      border-bottom: 1px solid #eef2f6;
+    }
+    .main-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .logo img {
+      display: block;
+      height: 44px;
+      width: auto;
+    }
+    .header-contacts {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .contact-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .contact-block i {
+      font-size: 28px;
+      color: #1e4a8a;
+    }
+    .contact-info .label {
+      font-size: 13px;
+      color: #5b6e8c;
+      letter-spacing: 0.3px;
+    }
+    .contact-info a {
+      font-weight: 700;
+      font-size: 18px;
+      color: #0f2b4d;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-info a:hover {
+      color: #2563eb;
+    }
+
+    /* ========== НАВИГАЦИЯ ========== */
+    .nav-menu {
+      background: white;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 1px 6px rgba(0, 0, 0, 0.02);
+      border-bottom: 1px solid #eef2f6;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(2px);
+      background-color: rgba(255, 255, 255, 0.98);
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      gap: 8px;
+      padding: 0;
+      margin: 0;
+    }
+    .nav-links li a {
+      display: inline-block;
+      padding: 16px 12px;
+      font-weight: 500;
+      font-size: 15px;
+      color: #1e2f44;
+      text-decoration: none;
+      transition: all 0.2s;
+      border-radius: 8px;
+    }
+    .nav-links li.active a,
+    .nav-links li a:hover {
+      color: #1e4a8a;
+      background-color: #f0f4fe;
+    }
+    .btn-online {
+      background: linear-gradient(105deg, #1e4a8a 0%, #2563eb 100%);
+      color: white !important;
+      padding: 8px 16px !important;
+      border-radius: 40px !important;
+      font-weight: 600 !important;
+      margin-left: 12px;
+      transition: transform 0.1s, box-shadow 0.2s;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+      margin-top: 8px;
+      cursor: pointer;
+    }
+    .btn-online i {
+      margin-right: 8px;
+    }
+    .btn-online:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+      background: linear-gradient(105deg, #1e4a8a, #2b6ef0);
+    }
+
+    /* Hero секция */
+    .hero {
+      background: linear-gradient(135deg, #eef5ff 0%, #ffffff 100%);
+      padding: 60px 0 40px;
+      position: relative;
+    }
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .hero-content {
+      flex: 1;
+    }
+    .hero-badge {
+      background: #e8f0fe;
+      color: #1a73e8;
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 24px;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #0f172a;
+      margin-bottom: 20px;
+    }
+    .hero-content p {
+      font-size: 1.125rem;
+      color: #475569;
+      margin-bottom: 32px;
+      max-width: 500px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: #1a73e8;
+      color: white;
+      padding: 12px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+    }
+    .btn-outline {
+      border: 1px solid #e2e8f0;
+      background: white;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 500;
+      text-decoration: none;
+      color: #0f172a;
+      transition: 0.2s;
+    }
+    .btn-primary:hover {
+      background: #0f5bb5;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    }
+    .btn-outline:hover {
+      border-color: #1a73e8;
+      color: #1a73e8;
+    }
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Секция филиалов (аккордеон) */
+    .branches-section {
+      background: #f8fafd;
+      padding: 60px 0;
+    }
+    .branches-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .branch-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      flex: 1 1 280px;
+      transition: all 0.2s;
+      overflow: hidden;
+    }
+    .branch-card:hover {
+      transform: translateY(-4px);
+    }
+    .branch-header {
+      background: white;
+      padding: 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .branch-header i {
+      transition: transform 0.2s;
+      color: #1a73e8;
+    }
+    .branch-card.active .branch-header i {
+      transform: rotate(180deg);
+    }
+    .branch-details {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .branch-card.active .branch-details {
+      max-height: 300px;
+      padding: 20px;
+    }
+    .map-links {
+      display: flex;
+      gap: 12px;
+      margin: 12px 0;
+    }
+    .chip {
+      font-size: 0.75rem;
+      background: #f1f5f9;
+      padding: 6px 12px;
+      border-radius: 40px;
+      text-decoration: none;
+      color: #1a73e8;
+    }
+    .schedule {
+      list-style: none;
+      margin-top: 12px;
+    }
+    .schedule li {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      padding: 6px 0;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+
+    /* Секция услуг */
+    .services-section {
+      padding: 70px 0;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px;
+      margin-top: 20px;
+    }
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: all 0.25s ease;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      text-decoration: none;
+      color: #0f172a;
+      display: block;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: #e8f0fe;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+    .service-icon {
+      background: #e8f0fe;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      color: #1a73e8;
+      font-size: 28px;
+    }
+    .service-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .service-card p {
+      color: #475569;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Футер */
+    .footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 48px 0 32px;
+      margin-top: 40px;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      justify-content: space-between;
+    }
+    .footer-col {
+      flex: 1;
+      min-width: 200px;
+    }
+    .footer-col h4 {
+      color: white;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    .footer-links {
+      list-style: none;
+    }
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: white;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #1e293b;
+      font-size: 0.8rem;
+    }
+
+    /* ========== МОДАЛЬНОЕ ОКНО (расширенное: специалист + направление) ========== */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0.3s ease, opacity 0.3s ease;
+    }
+    .modal-overlay.active {
+      visibility: visible;
+      opacity: 1;
+    }
+    .modal-container {
+      background: #ffffff;
+      max-width: 550px;
+      width: 90%;
+      border-radius: 40px;
+      box-shadow: 0 35px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+      transform: scale(0.96);
+      transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .modal-overlay.active .modal-container {
+      transform: scale(1);
+    }
+    .modal-header {
+      background: linear-gradient(105deg, #1e4a8a, #2563eb);
+      padding: 28px 28px 20px;
+      color: white;
+      position: relative;
+    }
+    .modal-header h3 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+    .modal-header p {
+      font-size: 15px;
+      opacity: 0.85;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .modal-close {
+      position: absolute;
+      right: 24px;
+      top: 24px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 60px;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 20px;
+      color: white;
+    }
+    .modal-close:hover {
+      background: rgba(255, 255, 255, 0.35);
+      transform: rotate(90deg);
+    }
+    .modal-body {
+      padding: 28px 28px 36px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1e2f44;
+      font-size: 14px;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 28px;
+      border: 1.5px solid #e2e8f0;
+      font-size: 16px;
+      transition: all 0.2s;
+      background: #fefefe;
+      font-family: inherit;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+    .double-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .double-group .form-group {
+      flex: 1;
+    }
+    .modal-submit {
+      background: linear-gradient(105deg, #1e4a8a, #2563eb);
+      border: none;
+      width: 100%;
+      padding: 16px;
+      border-radius: 44px;
+      font-weight: 700;
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+      margin-top: 8px;
+    }
+    .modal-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.4);
+    }
+    .modal-footer-note {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #5b6e8c;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .main-header .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .header-contacts {
+        justify-content: center;
+        width: 100%;
+      }
+      .nav-links {
+        justify-content: center;
+      }
+      .btn-online {
+        margin-left: 0;
+      }
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+    }
+    @media (max-width: 640px) {
+      .container {
+        padding: 0 20px;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-buttons a, .hero-buttons button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+      .double-group {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Верхняя плашка -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-contacts">
+        <a href="mailto:info@reamedalmet.ru"><i class="far fa-envelope"></i> info@reamedalmet.ru</a>
+        <span><i class="far fa-clock"></i> Ежедневно с 8:00 до 20:00</span>
+      </div>
+      <div class="social-icons">
+        <a href="https://vk.com/reamedalmet" target="_blank"><i class="fab fa-vk"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Основной хедер -->
+  <header class="main-header">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="https://reamedalmet.ru/wp-content/uploads/2023/11/logo-1.png" alt="Реамед" width="168" height="44">
+      </a>
+      <div class="header-contacts">
+        <div class="contact-block">
+          <i class="fas fa-phone-alt"></i>
+          <div class="contact-info">
+            <div class="label">Прием врачей / Медосмотры</div>
+            <a href="tel:+78553399939">+7 (8553) 39-99-39</a>
+          </div>
+        </div>
+        <div class="contact-block">
+          <i class="fas fa-stethoscope"></i>
+          <div class="contact-info">
+            <div class="label">Наркология</div>
+            <a href="tel:+78553440404">+7 (8553) 44-04-04</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Навигация -->
+  <div class="nav-menu">
+    <div class="container">
+      <ul class="nav-links">
+        <li class="active"><a href="index.html">Главная</a></li>
+        <li><a href="./specialist.html">Специалисты</a></li>
+        <li><a href="./uslugi.html">Услуги</a></li>
+        <li><a href="./contact.html">Контакты</a></li>
+        <li><a href="./vacancy2.html">Вакансии</a></li>
+        <li><a href="#" class="btn-online" id="onlineAppointmentBtn"><i class="fas fa-calendar-check"></i> Онлайн-запись</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Hero секция -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">Современная медицина</div>
+          <h1>Забота о здоровье<br />для всей семьи</h1>
+          <p>Консультации экспертов, точная диагностика, хирургия одного дня и комфортный стационар в Альметьевске.</p>
+          <div class="hero-buttons">
+            <button class="btn-primary" id="heroOnlineBtn"><i class="fas fa-pen-alt"></i> Записаться онлайн</button>
+            <a href="#services" class="btn-outline">Наши услуги</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://reamedalmet.ru/wp-content/uploads/2021/07/зрщту.png" alt="Врач и пациент" style="max-width: 90%; border-radius: 32px">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Филиалы (аккордеон) -->
+  <section class="branches-section">
+    <div class="container">
+      <h2 style="text-align: center">Наши центры</h2>
+      <p class="section-subhead" style="text-align: center; margin-bottom: 32px">Удобные локации в Альметьевске</p>
+      <div class="branches-grid" id="branchesAccordion">
+        <div class="branch-card">
+          <div class="branch-header">ул. Чехова, д.2 <i class="fas fa-chevron-down"></i></div>
+          <div class="branch-details">
+            <div class="map-links"><a href="#" class="chip">Яндекс Карты</a><a href="#" class="chip">2ГИС</a></div>
+            <div>Прием врачей, диагностика, хирургия</div>
+            <div><strong>+7 (8553) 39-99-39</strong></div>
+            <ul class="schedule"><li><span>Будни</span><b>8:00 — 20:00</b></li><li><span>Выходные</span><b>8:00 — 16:00</b></li></ul>
+          </div>
+        </div>
+        <div class="branch-card">
+          <div class="branch-header">пр. Строителей, д.30 б <i class="fas fa-chevron-down"></i></div>
+          <div class="branch-details">
+            <div class="map-links"><a href="#" class="chip">2ГИС</a><a href="#" class="chip">Яндекс Карты</a></div>
+            <div>Прием врачей, диагностика</div>
+            <div><strong>+7 (8553) 39-99-39</strong></div>
+            <ul class="schedule"><li><span>Будни</span><b>7:00 — 19:00</b></li><li><span>Выходные</span><b>8:00 — 16:00</b></li></ul>
+          </div>
+        </div>
+        <div class="branch-card">
+          <div class="branch-header">ул. Белоглазова, д.48 <i class="fas fa-chevron-down"></i></div>
+          <div class="branch-details">
+            <div class="map-links"><a href="#" class="chip">Яндекс Карты</a><a href="#" class="chip">2ГИС</a></div>
+            <div>Прием врачей, диагностика</div>
+            <div><strong>+7 (8553) 39-99-39</strong></div>
+            <ul class="schedule"><li><span>Будни</span><b>8:00 — 19:00</b></li><li><span>Обед</span><b>12:00-13:00</b></li><li><span>Выходные</span><b>8:00-12:00</b></li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Услуги (основной блок) -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <h2 style="text-align: center">Медицинские направления</h2>
+      <p class="section-subhead" style="text-align: center">Современные методы лечения и диагностики</p>
+      <div class="services-grid">
+        <a href="./consult.html" class="service-card"><div class="service-icon"><i class="fas fa-stethoscope"></i></div><h3>Консультации специалистов</h3><p>Взрослые и детские врачи, узкие эксперты, психотерапия.</p></a>
+        <a href="./diagnostic.html" class="service-card"><div class="service-icon"><i class="fas fa-microscope"></i></div><h3>Диагностика</h3><p>Маммография, УЗИ, ФГДС, Холтер, ЭЭГ, чекапы и онкоскрининг.</p></a>
+        <a href="./hirurgy.html" class="service-card"><div class="service-icon"><i class="fas fa-hand-holding-medical"></i></div><h3>Хирургия одного дня</h3><p>Артроскопия, лазерное лечение, лапароскопия, удаление желчного пузыря.</p></a>
+        <a href="./lfk.html" class="service-card"><div class="service-icon"><i class="fas fa-spa"></i></div><h3>Терапия и реабилитация</h3><p>ЛФК, УВТ, иглорефлексотерапия, плазмолифтинг, тейпирование.</p></a>
+        <a href="./cosmetology.html" class="service-card"><div class="service-icon"><i class="fas fa-hand-holding-heart"></i></div><h3>Косметология</h3><p>Инъекционные методики, аппаратные процедуры, уход за кожей.</p></a>
+        <a href="./narcology.html" class="service-card"><div class="service-icon"><i class="fas fa-brain"></i></div><h3>Психическое здоровье</h3><p>Психотерапия, лечение зависимостей, семейная терапия, коррекция пищевого поведения.</p></a>
+        <a href="./med_osmotr.html" class="service-card"><div class="service-icon"><i class="fas fa-id-card"></i></div><h3>Медицинские осмотры</h3><p>Справки в ГИБДД, медкнижки, профосмотры, УМО.</p></a>
+        <a href="./NaDom.index" class="service-card"><div class="service-icon"><i class="fas fa-home"></i></div><h3>Вызов врача на дом</h3><p>Осмотр, лечение, процедуры без визита в клинику.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col"><h4>ООО «Реамед»</h4><p>Лицензия Л041-01181-16/00344835 от 07.09.2020</p><p><i class="fas fa-phone-alt"></i> +7 (8553) 39-99-39</p><p><i class="far fa-envelope"></i> info@reamedalmet.ru</p></div>
+        <div class="footer-col"><h4>Пациентам</h4><ul class="footer-links"><li><a href="./oferta.html">Договор оферты</a></li><li><a href="./policy.html">Политика обработки данных</a></li><li><a href="./nalog.html">Налоговый вычет</a></li></ul></div>
+      </div>
+      <div class="copyright">2025 © ООО «Реамед». Все права защищены. Информация на сайте не является публичной офертой.</div>
+    </div>
+  </footer>
+
+  <!-- МОДАЛЬНОЕ ОКНО с выбором специалиста / направления -->
+  <div class="modal-overlay" id="appointmentModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-close" id="closeModalBtn"><i class="fas fa-times"></i></div>
+        <h3><i class="fas fa-calendar-check"></i> Запись на приём</h3>
+        <p><i class="fas fa-user-md"></i> Выберите специалиста или направление</p>
+      </div>
+      <div class="modal-body">
+        <form id="modalForm">
+          <div class="form-group">
+            <label>Ваше имя *</label>
+            <input type="text" id="userName" placeholder="Иван Иванов" required>
+          </div>
+          <div class="form-group">
+            <label>Телефон *</label>
+            <input type="tel" id="userPhone" placeholder="+7 (___) ___-__-__" required>
+          </div>
+          <div class="double-group">
+            <div class="form-group">
+              <label>Направление / Услуга</label>
+              <select id="serviceDirection">
+                <option value="Консультация терапевта">Консультация терапевта</option>
+                <option value="Консультация кардиолога">Консультация кардиолога</option>
+                <option value="Консультация невролога">Консультация невролога</option>
+                <option value="УЗИ диагностика">УЗИ диагностика</option>
+                <option value="МРТ/КТ">МРТ/КТ</option>
+                <option value="Хирургия (амбулаторно)">Хирургия (амбулаторно)</option>
+                <option value="Косметология">Косметология</option>
+                <option value="Медицинский осмотр (справки)">Медицинский осмотр (справки)</option>
+                <option value="Вызов врача на дом">Вызов врача на дом</option>
+                <option value="Психотерапия / наркология">Психотерапия / наркология</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Специалист (по желанию)</label>
+              <select id="doctorSelect">
+                <option value="">Любой специалист</option>
+                <option value="Иванова М.И. (терапевт)">Иванова М.И. (терапевт)</option>
+                <option value="Смирнов А.В. (кардиолог)">Смирнов А.В. (кардиолог)</option>
+                <option value="Кузнецова Е.П. (невролог)">Кузнецова Е.П. (невролог)</option>
+                <option value="Петров Д.С. (хирург)">Петров Д.С. (хирург)</option>
+                <option value="Васильева О.Н. (УЗИ)">Васильева О.Н. (УЗИ)</option>
+                <option value="Михайлова А.К. (косметолог)">Михайлова А.К. (косметолог)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Филиал</label>
+            <select id="branchSelect">
+              <option value="ул. Чехова, д.2">ул. Чехова, д.2 (основной)</option>
+              <option value="пр. Строителей, д.30 б">пр. Строителей, д.30 б</option>
+              <option value="ул. Белоглазова, д.48">ул. Белоглазова, д.48</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Желаемая дата (ориентир)</label>
+            <input type="date" id="userDate">
+          </div>
+          <button type="submit" class="modal-submit">Отправить заявку <i class="fas fa-paper-plane"></i></button>
+          <div class="modal-footer-note">Нажимая «Отправить», вы соглашаетесь с политикой обработки данных. Администратор свяжется с вами в течение 15 минут.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Модальное окно с расширенными полями (специалист / направление)
+    const modalOverlay = document.getElementById('appointmentModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const onlineMenuBtn = document.getElementById('onlineAppointmentBtn');
+    const heroOnlineBtn = document.getElementById('heroOnlineBtn');
+
+    function openModal() {
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    if (onlineMenuBtn) {
+      onlineMenuBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+      });
+    }
+    if (heroOnlineBtn) {
+      heroOnlineBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+      });
+    }
+
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal();
+    });
+
+    // Обработка формы с выбором направления и специалиста
+    const modalForm = document.getElementById('modalForm');
+    modalForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('userName').value.trim();
+      const phone = document.getElementById('userPhone').value.trim();
+      const direction = document.getElementById('serviceDirection').value;
+      const doctor = document.getElementById('doctorSelect').value;
+      const branch = document.getElementById('branchSelect').value;
+      const date = document.getElementById('userDate').value;
+
+      if (!name || !phone) {
+        alert('Пожалуйста, заполните имя и номер телефона');
+        return;
+      }
+
+      let specialistText = doctor ? ` (специалист: ${doctor})` : '';
+      let finalDirection = direction + specialistText;
+      let message = `Спасибо, ${name}! Ваша заявка принята.\nНаправление: ${finalDirection}\nФилиал: ${branch}`;
+      if (date) message += `\nПредварительная дата: ${date}`;
+      message += `\nМы свяжемся с вами по номеру ${phone} в ближайшее время.`;
+
+      alert(message);
+      closeModal();
+      modalForm.reset();
+      // можно восстановить дефолтные значения для селектов
+      document.getElementById('serviceDirection').value = "Консультация терапевта";
+      document.getElementById('doctorSelect').value = "";
+      document.getElementById('branchSelect').value = "ул. Чехова, д.2";
+    });
+
+    // Аккордеон филиалов
+    document.querySelectorAll(".branch-card").forEach((card) => {
+      const header = card.querySelector(".branch-header");
+      if (header) {
+        header.addEventListener("click", (e) => {
+          e.preventDefault();
+          card.classList.toggle("active");
+        });
+      }
+    });
+  </script>
+</body>
+</html>

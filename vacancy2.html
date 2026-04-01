@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      Вакансии в клинике Реамед - Присоединяйтесь к команде профессионалов
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* ========== БАЗОВЫЕ СБРОСЫ И ШРИФТЫ ========== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background-color: #ffffff;
+        color: #1e293b;
+        line-height: 1.5;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* ========== ВЕРХНЯЯ ПЛАШКА ========== */
+      .top-bar {
+        background-color: #f8fafc;
+        border-bottom: 1px solid #e9eef3;
+        font-size: 14px;
+        padding: 10px 0;
+      }
+
+      .top-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .top-contacts {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .top-contacts a,
+      .top-contacts span {
+        color: #334155;
+        text-decoration: none;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .top-contacts a:hover {
+        color: #1e4a8a;
+      }
+
+      .social-icons a {
+        color: #334155;
+        font-size: 18px;
+        transition: color 0.2s;
+      }
+      .social-icons a:hover {
+        color: #1e4a8a;
+      }
+
+      /* ========== ОСНОВНОЙ ХЕДЕР ========== */
+      .main-header {
+        background: white;
+        padding: 20px 0;
+        border-bottom: 1px solid #eef2f6;
+      }
+
+      .main-header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+
+      .logo img {
+        display: block;
+        height: 44px;
+        width: auto;
+      }
+
+      .header-contacts {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+
+      .contact-block {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .contact-block i {
+        font-size: 28px;
+        color: #1e4a8a;
+      }
+
+      .contact-info .label {
+        font-size: 13px;
+        color: #5b6e8c;
+        letter-spacing: 0.3px;
+      }
+
+      .contact-info a {
+        font-weight: 700;
+        font-size: 18px;
+        color: #0f2b4d;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .contact-info a:hover {
+        color: #2563eb;
+      }
+
+      /* ========== НАВИГАЦИЯ ========== */
+      .nav-menu {
+        background: white;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 1px 6px rgba(0, 0, 0, 0.02);
+        border-bottom: 1px solid #eef2f6;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(2px);
+        background-color: rgba(255, 255, 255, 0.98);
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        gap: 8px;
+        padding: 0;
+        margin: 0;
+      }
+
+      .nav-links li a {
+        display: inline-block;
+        padding: 16px 12px;
+        font-weight: 500;
+        font-size: 15px;
+        color: #1e2f44;
+        text-decoration: none;
+        transition: all 0.2s;
+        border-radius: 8px;
+      }
+
+      .nav-links li.active a,
+      .nav-links li a:hover {
+        color: #1e4a8a;
+        background-color: #f0f4fe;
+      }
+
+      .btn-online {
+        background: linear-gradient(105deg, #1e4a8a 0%, #2563eb 100%);
+        color: white !important;
+        padding: 8px 16px !important;
+        border-radius: 40px !important;
+        font-weight: 600 !important;
+        margin-left: 12px;
+        transition: transform 0.1s, box-shadow 0.2s;
+        box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+        margin-top: 8px;
+      }
+
+      .btn-online i {
+        margin-right: 8px;
+      }
+
+      .btn-online:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+        background: linear-gradient(105deg, #1e4a8a, #2b6ef0);
+      }
+
+      /* ========== ХЛЕБНЫЕ КРОШКИ ========== */
+      .breadcrumbs {
+        padding: 28px 0 16px;
+        font-size: 14px;
+        color: #5f6c84;
+      }
+      .breadcrumbs a {
+        color: #2563eb;
+        text-decoration: none;
+      }
+      .breadcrumbs span {
+        margin: 0 6px;
+      }
+
+      /* ========== СТРАНИЦА ВАКАНСИЙ - СОВРЕМЕННЫЙ ДИЗАЙН ========== */
+      .vacancy-hero {
+        background: linear-gradient(135deg, #f0f9ff 0%, #e6f0fa 100%);
+        padding: 64px 0 48px 0;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .vacancy-hero-content {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .vacancy-hero h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        background: linear-gradient(105deg, #1e3a8a 0%, #2563eb 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+      }
+
+      .vacancy-hero p {
+        font-size: 1.2rem;
+        color: #334155;
+        margin-bottom: 2rem;
+      }
+
+      .vacancy-badge {
+        display: inline-block;
+        background: rgba(37, 99, 235, 0.1);
+        padding: 6px 16px;
+        border-radius: 40px;
+        color: #2563eb;
+        font-weight: 500;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+
+      /* Сетка вакансий */
+      .vacancies-grid {
+        padding: 60px 0 80px;
+        background: #ffffff;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 48px;
+        color: #0f172a;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+        gap: 32px;
+      }
+
+      .vacancy-card {
+        background: #ffffff;
+        border-radius: 28px;
+        box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.05),
+          0 1px 2px rgba(0, 0, 0, 0.02);
+        transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+        border: 1px solid #f0f2f5;
+        overflow: hidden;
+      }
+
+      .vacancy-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.12);
+        border-color: #e0e7ff;
+      }
+
+      .card-image {
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .vacancy-card:hover .card-image img {
+        transform: scale(1.02);
+      }
+
+      .salary-tag {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: linear-gradient(105deg, #1e4a8a, #2563eb);
+        color: white;
+        padding: 6px 14px;
+        border-radius: 40px;
+        font-weight: 700;
+        font-size: 0.85rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2px);
+      }
+
+      .card-content {
+        padding: 24px 24px 28px;
+      }
+
+      .card-content h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: #0f172a;
+      }
+
+      .job-meta {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+      }
+
+      .job-meta span {
+        font-size: 0.85rem;
+        color: #4b5563;
+        background: #f8fafc;
+        padding: 4px 12px;
+        border-radius: 30px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .job-meta i {
+        font-size: 12px;
+        color: #2563eb;
+      }
+
+      .card-content p {
+        color: #334155;
+        line-height: 1.5;
+        margin-bottom: 24px;
+      }
+
+      .vacancy-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #f1f5f9;
+        color: #1e4a8a;
+        font-weight: 600;
+        padding: 10px 20px;
+        border-radius: 40px;
+        text-decoration: none;
+        transition: all 0.2s;
+        font-size: 0.9rem;
+        cursor: pointer;
+        border: none;
+        font-family: inherit;
+      }
+
+      .vacancy-btn i {
+        transition: transform 0.2s;
+      }
+
+      .vacancy-btn:hover {
+        background: #e2e8f0;
+        color: #0f2b4d;
+      }
+
+      .vacancy-btn:hover i {
+        transform: translateX(4px);
+      }
+
+      /* Форма отправки резюме */
+      .resume-section {
+        background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+        padding: 70px 0;
+        border-top: 1px solid #eef2f6;
+        border-bottom: 1px solid #eef2f6;
+      }
+
+      .resume-card {
+        max-width: 780px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 36px;
+        box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.08);
+        padding: 40px 48px;
+        border: 1px solid #f0f2f5;
+      }
+
+      .resume-card h2 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: #0f172a;
+      }
+
+      .resume-card .subtitle {
+        color: #5b6e8c;
+        margin-bottom: 32px;
+        border-left: 3px solid #2563eb;
+        padding-left: 16px;
+        font-size: 1rem;
+      }
+
+      .form-group {
+        margin-bottom: 24px;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 8px;
+        color: #1e2f44;
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group input[type="file"] {
+        width: 100%;
+        padding: 14px 16px;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        font-family: inherit;
+        font-size: 1rem;
+        transition: all 0.2s;
+        background: #fefefe;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+
+      .form-group input[type="file"] {
+        padding: 12px 12px;
+        background: #f8fafc;
+      }
+
+      .submit-btn {
+        background: linear-gradient(105deg, #1e4a8a, #2563eb);
+        border: none;
+        padding: 14px 28px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: white;
+        border-radius: 40px;
+        cursor: pointer;
+        transition: all 0.2s;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px -8px #1e4a8a;
+        background: linear-gradient(105deg, #1e4a8a, #2b6ef0);
+      }
+
+      /* футер */
+      .footer {
+        background: #0f172a;
+        color: #cbd5e6;
+        padding: 60px 0 30px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-col h4 {
+        color: white;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      .footer-col p {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links a {
+        color: #cbd5e6;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      .copyright {
+        border-top: 1px solid #1e293b;
+        padding-top: 30px;
+        text-align: center;
+        font-size: 0.85rem;
+        color: #94a3b8;
+      }
+      
+      /* ========== МОДАЛЬНОЕ ОКНО (вакансии + общее) ========== */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(15, 23, 42, 0.75);
+        backdrop-filter: blur(6px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0.3s ease, opacity 0.3s ease;
+      }
+      .modal-overlay.active {
+        visibility: visible;
+        opacity: 1;
+      }
+      .modal-container {
+        background: #ffffff;
+        max-width: 550px;
+        width: 90%;
+        border-radius: 40px;
+        box-shadow: 0 35px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
+        overflow: hidden;
+        transform: scale(0.96);
+        transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      }
+      .modal-overlay.active .modal-container {
+        transform: scale(1);
+      }
+      .modal-header {
+        background: linear-gradient(105deg, #1e4a8a, #2563eb);
+        padding: 28px 28px 20px;
+        color: white;
+        position: relative;
+      }
+      .modal-header h3 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        letter-spacing: -0.3px;
+      }
+      .modal-header p {
+        font-size: 15px;
+        opacity: 0.85;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .modal-close {
+        position: absolute;
+        right: 24px;
+        top: 24px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 60px;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 20px;
+        color: white;
+      }
+      .modal-close:hover {
+        background: rgba(255, 255, 255, 0.35);
+        transform: rotate(90deg);
+      }
+      .modal-body {
+        padding: 28px 28px 36px;
+      }
+      .vacancy-detail-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px 0;
+      }
+      .vacancy-detail-list li {
+        margin-bottom: 14px;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        font-size: 15px;
+        color: #1e293b;
+      }
+      .vacancy-detail-list li i {
+        color: #2563eb;
+        font-size: 18px;
+        min-width: 24px;
+        margin-top: 2px;
+      }
+      .vacancy-full-desc {
+        background: #f8fafc;
+        padding: 18px;
+        border-radius: 24px;
+        margin: 16px 0 20px;
+        line-height: 1.55;
+        color: #334155;
+        font-size: 14px;
+      }
+      .vacancy-contact-btn {
+        background: linear-gradient(105deg, #1e4a8a, #2563eb);
+        border: none;
+        width: 100%;
+        padding: 14px;
+        border-radius: 44px;
+        font-weight: 700;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+        transition: 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 8px;
+        text-decoration: none;
+      }
+      .vacancy-contact-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(37, 99, 235, 0.4);
+      }
+      .modal-footer-note {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #5b6e8c;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 20px;
+        }
+        .vacancy-hero h1 {
+          font-size: 2.2rem;
+        }
+        .resume-card {
+          padding: 28px 20px;
+        }
+        .grid-container {
+          grid-template-columns: 1fr;
+        }
+        .header-contacts {
+          justify-content: center;
+        }
+        .nav-links {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ВЕРХНЯЯ ПЛАШКА -->
+    <div class="top-bar">
+      <div class="container">
+        <div class="top-contacts">
+          <a href="mailto:info@reamedalmet.ru"
+            ><i class="far fa-envelope"></i> info@reamedalmet.ru</a
+          >
+          <span><i class="far fa-clock"></i> Ежедневно с 8:00 до 20:00</span>
+        </div>
+        <div class="social-icons">
+          <a href="https://vk.com/reamedalmet" target="_blank"
+            ><i class="fab fa-vk"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ОСНОВНОЙ ХЕДЕР -->
+    <header class="main-header">
+      <div class="container">
+        <a href="/" class="logo">
+          <img
+            src="https://reamedalmet.ru/wp-content/uploads/2023/11/logo-1.png"
+            alt="Реамед"
+            width="168"
+            height="44"
+          />
+        </a>
+        <div class="header-contacts">
+          <div class="contact-block">
+            <i class="fas fa-phone-alt"></i>
+            <div class="contact-info">
+              <div class="label">Прием врачей / Медосмотры</div>
+              <a href="tel:+78553399939">+7 (8553) 39-99-39</a>
+            </div>
+          </div>
+          <div class="contact-block">
+            <i class="fas fa-stethoscope"></i>
+            <div class="contact-info">
+              <div class="label">Наркология</div>
+              <a href="tel:+78553440404">+7 (8553) 44-04-04</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- НАВИГАЦИЯ -->
+    <div class="nav-menu">
+      <div class="container">
+        <ul class="nav-links">
+          <li><a href="./index.html">Главная</a></li>
+          <li><a href="./specialist.html">Специалисты</a></li>
+          <li><a href="./uslugi.html">Услуги</a></li>
+          <li><a href="./contact.html">Контакты</a></li>
+          <li class="active"><a href="./vacancy2.html">Вакансии</a></li>
+          <li><a href="#" class="btn-online" id="onlineAppointmentBtn"><i class="fas fa-calendar-check"></i> Онлайн-запись</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ГЕРОЙ СТРАНИЦЫ ВАКАНСИЙ -->
+    <section class="vacancy-hero">
+      <div class="container">
+        <div class="vacancy-hero-content">
+          <span class="vacancy-badge"
+            ><i class="fas fa-heart"></i> Работа в команде Реамед</span
+          >
+          <h1>Станьте частью <br />профессиональной команды</h1>
+          <p>
+            Мы ценим инициативность, заботу о пациентах и желание расти. Вместе
+            мы создаем лучший медицинский сервис в Альметьевске.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- СЕТКА АКТУАЛЬНЫХ ВАКАНСИЙ -->
+    <section class="vacancies-grid">
+      <div class="container">
+        <h2 class="section-title">Открытые позиции</h2>
+        <div class="grid-container" id="vacanciesGrid"></div>
+      </div>
+    </section>
+
+    <!-- ФОРМА ОТКЛИКА / РЕЗЮМЕ -->
+    <section class="resume-section">
+      <div class="container">
+        <div class="resume-card">
+          <h2><i class="fas fa-paper-plane"></i> Откликнуться на вакансию</h2>
+          <div class="subtitle">
+            Не нашли подходящую позицию? Отправьте резюме, и мы рассмотрим вас в
+            кадровый резерв
+          </div>
+          <form
+            id="vacancyForm"
+            action="#"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="form-group">
+              <label for="fullName">Ваше имя *</label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Иванова Анна Сергеевна"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Телефон *</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+7 (___)-___-__-__"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="vacancySelect"
+                >Интересующая вакансия (или укажите свою)</label
+              >
+              <input
+                type="text"
+                id="vacancySelect"
+                name="vacancy"
+                placeholder="Например: Операционная медсестра / Администратор"
+              />
+            </div>
+            <div class="form-group">
+              <label for="resumeFile"
+                >Прикрепить резюме (PDF, DOC, DOCX) *</label
+              >
+              <input
+                type="file"
+                id="resumeFile"
+                name="resume"
+                accept=".pdf,.doc,.docx,.jpg,.png"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="comment">Комментарий (кратко о себе)</label>
+              <textarea
+                id="comment"
+                name="comment"
+                rows="3"
+                placeholder="Расскажите о своем опыте, образовании и профессиональных навыках..."
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+              <i class="fas fa-paper-plane"></i> Отправить резюме
+            </button>
+            <p style="font-size: 12px; margin-top: 16px; color: #6c757d">
+              <i class="fas fa-lock"></i> Ваши данные защищены и используются
+              только для рассмотрения кандидатуры.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ФУТЕР -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>ООО «Реамед»</h4>
+            <p>Лицензия Л041-01181-16/00344835 от 07.09.2020</p>
+            <p><i class="fas fa-phone-alt"></i> +7 (8553) 39-99-39</p>
+            <p><i class="far fa-envelope"></i> info@reamedalmet.ru</p>
+          </div>
+          <div class="footer-col">
+            <h4>Пациентам</h4>
+            <ul class="footer-links">
+              <li><a href="./oferta.html">Договор оферты</a></li>
+              <li><a href="./policy.html">Политика обработки данных</a></li>
+              <li><a href="./nalog.html">Налоговый вычет</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          2025 © ООО «Реамед». Все права защищены. Информация на сайте не
+          является публичной офертой.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Модальное окно для вакансий (универсальное) -->
+    <div class="modal-overlay" id="vacancyModal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <div class="modal-close" id="closeVacancyModalBtn"><i class="fas fa-times"></i></div>
+          <h3><i class="fas fa-briefcase"></i> <span id="vacancyModalTitle">Вакансия</span></h3>
+          <p><i class="fas fa-map-marker-alt"></i> <span id="vacancyModalLocation">Адрес</span> &nbsp;|&nbsp; <span id="vacancyModalSalary">з/п</span></p>
+        </div>
+        <div class="modal-body">
+          <ul class="vacancy-detail-list" id="vacancyMetaList"></ul>
+          <div class="vacancy-full-desc" id="vacancyFullDesc"></div>
+          <a href="tel:+79178671970" class="vacancy-contact-btn"><i class="fas fa-phone-alt"></i> Связаться по вакансии</a>
+          <div class="modal-footer-note">Позвоните нам для уточнения деталей или отправьте резюме через форму ниже</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно онлайн-записи (оставлено как есть) -->
+    <div class="modal-overlay" id="appointmentModal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <div class="modal-close" id="closeModalBtn"><i class="fas fa-times"></i></div>
+          <h3><i class="fas fa-calendar-check"></i> Запись на приём</h3>
+          <p><i class="fas fa-stethoscope"></i> <span id="modalServiceName">Онлайн-запись в клинику</span></p>
+        </div>
+        <div class="modal-body">
+          <form id="modalForm">
+            <div class="form-group">
+              <label>Ваше имя *</label>
+              <input type="text" id="userName" placeholder="Иван Иванов" required>
+            </div>
+            <div class="form-group">
+              <label>Телефон *</label>
+              <input type="tel" id="userPhone" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            <div class="form-group">
+              <label>Желаемая дата</label>
+              <input type="date" id="userDate">
+            </div>
+            <button type="submit" class="modal-submit" style="background: linear-gradient(105deg, #1e4a8a, #2563eb); border: none; width:100%; padding:16px; border-radius:44px; font-weight:700; color:white;">Отправить заявку <i class="fas fa-paper-plane"></i></button>
+            <div class="modal-footer-note">Нажимая «Отправить», вы соглашаетесь с политикой обработки данных. Администратор свяжется с вами в течение 15 минут.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Данные вакансий (полная информация для модалок)
+      const vacanciesData = [
+        {
+          id: 1,
+          title: "Операционная медсестра",
+          salary: "от 70 000 ₽",
+          location: "ул. Чехова, 2",
+          schedule: "Полная занятость, сменный график",
+          requirements: "Действующий сертификат 'Операционное дело'. Опыт работы от 1 года. Знание принципов асептики и антисептики.",
+          duties: "Подготовка операционного блока и инструментария, ассистирование хирургам, контроль стерильности, ведение документации.",
+          conditions: "Оформление по ТК РФ, стабильные выплаты, дружный коллектив, возможности профессионального развития.",
+          fullDesc: "Проведение подготовки операционного блока, ассистирование хирургам, контроль стерильности. Требуется действующий сертификат 'Операционное дело'. Опыт работы от 1 года. График работы обсуждается на собеседовании. Предоставляем комфортные условия труда, современное оснащение.",
+          img: "https://reamedalmet.ru/wp-content/uploads/2024/12/h1Ck3Y_LZs.jpg",
+          metaExtra: ["Высшее/среднее мед. образование", "Аккуратность, стрессоустойчивость"]
+        },
+        {
+          id: 2,
+          title: "Медсестра функциональной диагностики",
+          salary: "от 30 000 ₽",
+          location: "ул. Чехова, 2",
+          schedule: "5/2, с 8:00 до 17:00",
+          requirements: "Наличие сертификата по функциональной диагностике, опыт работы с ЭКГ, холтер, спирография.",
+          duties: "Проведение ЭКГ, суточного мониторирования ЭКГ и АД, спирографии, помощь врачу функциональной диагностики.",
+          conditions: "Официальное трудоустройство, соцпакет, обучение на рабочем месте.",
+          fullDesc: "Проведение ЭКГ, суточного мониторирования, спирографии, помощь врачу функциональной диагностики. Наличие сертификата по специальности обязательно. Доброжелательность, внимательность.",
+          img: "https://reamedalmet.ru/wp-content/uploads/2024/05/s2ctk1xgsockdvpza6w857ivqls3nl0p-2.jpg",
+          metaExtra: ["Среднее мед. образование", "Навыки работы с аппаратурой"]
+        },
+        {
+          id: 3,
+          title: "Медицинская сестра в процедурный кабинет",
+          salary: "от 35 000 ₽",
+          location: "ул. Чехова, 2",
+          schedule: "График 5/2",
+          requirements: "Опыт работы от 1 года, сертификат 'Сестринское дело'.",
+          duties: "Забор крови из вены, постановка капельниц, внутримышечные инъекции, ведение учетной документации.",
+          conditions: "Зарплата вовремя, удобный график, современные расходные материалы.",
+          fullDesc: "Забор крови из вены, постановка капельниц, внутримышечные инъекции, ведение документации. Аккуратность и доброжелательность — важные качества.",
+          img: "https://reamedalmet.ru/wp-content/uploads/2024/05/9d339ac87c14768c05cf08aef510d63c-e1721650393972.jpg",
+          metaExtra: ["Владение техникой в/в инъекций", "Коммуникабельность"]
+        },
+        {
+          id: 4,
+          title: "Младшая медсестра (санитарка)",
+          salary: "от 30 000 ₽",
+          location: "ул. Чехова, 2",
+          schedule: "Сменный график",
+          requirements: "Ответственность, пунктуальность, желание помогать. Опыт приветствуется.",
+          duties: "Поддержание чистоты, смена белья, помощь в уходе за пациентами, санитарная обработка.",
+          conditions: "Полный соцпакет, график по согласованию, дружный коллектив.",
+          fullDesc: "Поддержание чистоты, смена белья, помощь в уходе за пациентами. Ответственность, пунктуальность, желание помогать.",
+          img: "https://reamedalmet.ru/wp-content/uploads/2024/05/Cleaning-and-Disinfection-Practices-for-CNA-e1721650450704.webp",
+          metaExtra: ["Наличие санитарной книжки", "Добросовестность"]
+        },
+        {
+          id: 5,
+          title: "Младшая медсестра (санитарка) в операционную",
+          salary: "от 40 000 ₽",
+          location: "ул. Чехова, 2",
+          schedule: "Сменный график",
+          requirements: "Высокая ответственность, знание правил асептики, работа в условиях операционного блока.",
+          duties: "Подготовка операционной, транспортировка пациентов, уборка после операций, смена белья.",
+          conditions: "Доплата за сложность, обучение, стабильность.",
+          fullDesc: "Подготовка операционной, транспортировка пациентов, уборка после операций. Работа в слаженной команде хирургов и анестезиологов.",
+          img: "https://reamedalmet.ru/wp-content/uploads/2024/12/jhRVxVi4eF.webp",
+          metaExtra: ["Аккуратность", "Умение работать в стрессовых ситуациях"]
+        }
+      ];
+
+      // Генерация карточек
+      const gridContainer = document.getElementById('vacanciesGrid');
+      function renderCards() {
+        gridContainer.innerHTML = '';
+        vacanciesData.forEach(vac => {
+          const card = document.createElement('div');
+          card.className = 'vacancy-card';
+          card.innerHTML = `
+            <div class="card-image">
+              <img src="${vac.img}" alt="${vac.title}">
+              <div class="salary-tag">${vac.salary}</div>
+            </div>
+            <div class="card-content">
+              <h3>${vac.title}</h3>
+              <div class="job-meta">
+                <span><i class="fas fa-map-marker-alt"></i> ${vac.location}</span>
+                <span><i class="far fa-calendar-alt"></i> ${vac.schedule}</span>
+              </div>
+              <p>${vac.fullDesc.substring(0, 110)}...</p>
+              <button class="vacancy-btn" data-id="${vac.id}">Подробнее <i class="fas fa-arrow-right"></i></button>
+            </div>
+          `;
+          gridContainer.appendChild(card);
+        });
+        document.querySelectorAll('.vacancy-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const id = parseInt(btn.getAttribute('data-id'));
+            const vacancy = vacanciesData.find(v => v.id === id);
+            if (vacancy) openVacancyModal(vacancy);
+          });
+        });
+      }
+
+      // Модалка вакансий
+      const vacancyModal = document.getElementById('vacancyModal');
+      const closeVacancyBtn = document.getElementById('closeVacancyModalBtn');
+      function openVacancyModal(vac) {
+        document.getElementById('vacancyModalTitle').innerText = vac.title;
+        document.getElementById('vacancyModalLocation').innerHTML = `<i class="fas fa-location-dot"></i> ${vac.location}`;
+        document.getElementById('vacancyModalSalary').innerHTML = `<i class="fas fa-ruble-sign"></i> ${vac.salary}`;
+        
+        const metaList = document.getElementById('vacancyMetaList');
+        metaList.innerHTML = `
+          <li><i class="fas fa-calendar-week"></i> <strong>График:</strong> ${vac.schedule}</li>
+          <li><i class="fas fa-clipboard-list"></i> <strong>Обязанности:</strong> ${vac.duties}</li>
+          <li><i class="fas fa-graduation-cap"></i> <strong>Требования:</strong> ${vac.requirements}</li>
+          <li><i class="fas fa-hand-holding-heart"></i> <strong>Условия:</strong> ${vac.conditions}</li>
+        `;
+        if (vac.metaExtra) {
+          vac.metaExtra.forEach(extra => {
+            metaList.innerHTML += `<li><i class="fas fa-check-circle"></i> ${extra}</li>`;
+          });
+        }
+        document.getElementById('vacancyFullDesc').innerHTML = vac.fullDesc;
+        vacancyModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeVacancyModal() {
+        vacancyModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      if (closeVacancyBtn) closeVacancyBtn.addEventListener('click', closeVacancyModal);
+      vacancyModal.addEventListener('click', (e) => {
+        if (e.target === vacancyModal) closeVacancyModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && vacancyModal.classList.contains('active')) closeVacancyModal();
+      });
+
+      // Модалка онлайн-записи
+      const modalOverlay = document.getElementById('appointmentModal');
+      const modalServiceSpan = document.getElementById('modalServiceName');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+
+      function openAppointmentModal(serviceName = 'Онлайн-запись') {
+        modalServiceSpan.innerText = serviceName;
+        modalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeAppointmentModal() {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      const onlineMenuBtn = document.getElementById('onlineAppointmentBtn');
+      if (onlineMenuBtn) {
+        onlineMenuBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          openAppointmentModal('Онлайн-запись');
+        });
+      }
+
+      if (closeModalBtn) closeModalBtn.addEventListener('click', closeAppointmentModal);
+      modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeAppointmentModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeAppointmentModal();
+      });
+
+      const modalForm = document.getElementById('modalForm');
+      if (modalForm) {
+        modalForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = document.getElementById('userName').value.trim();
+          const phone = document.getElementById('userPhone').value.trim();
+          const date = document.getElementById('userDate').value;
+          const service = modalServiceSpan.innerText;
+          if (!name || !phone) {
+            alert('Пожалуйста, заполните имя и номер телефона');
+            return;
+          }
+          alert(`Спасибо, ${name}! Ваша заявка на "${service}" принята. Мы свяжемся с вами по номеру ${phone} в ближайшее время.${date ? ` Предварительная дата: ${date}` : ''}`);
+          closeAppointmentModal();
+          modalForm.reset();
+        });
+      }
+
+      // Форма резюме
+      document.getElementById("vacancyForm")?.addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Спасибо! Ваше резюме отправлено. Наш HR-специалист свяжется с вами в ближайшее время.");
+        this.reset();
+      });
+
+      renderCards();
+    </script>
+  </body>
+</html>

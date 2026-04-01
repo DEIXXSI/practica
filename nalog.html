@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Справка для налогового вычета | Возврат 13% за лечение - Реамед
+    </title>
+    <meta
+      name="description"
+      content="Получите справку для налогового вычета 13% за медицинские услуги в клинике Реамед. Простой порядок оформления, быстрая подготовка документов."
+    />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background: #ffffff;
+        color: #1e293b;
+        line-height: 1.5;
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      @media (max-width: 1024px) {
+        .container {
+          padding: 0 20px;
+        }
+      }
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 16px;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      /* ========== ВЕРХНЯЯ ПЛАШКА ========== */
+      .top-bar {
+        background-color: #f8fafc;
+        border-bottom: 1px solid #eef2f6;
+        font-size: 14px;
+        padding: 10px 0;
+      }
+
+      .top-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .top-contacts {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .top-contacts a,
+      .top-contacts span {
+        color: #334155;
+        text-decoration: none;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .top-contacts a:hover {
+        color: #1e4a8a;
+      }
+
+      .social-icons a {
+        color: #334155;
+        font-size: 18px;
+        transition: color 0.2s;
+      }
+      .social-icons a:hover {
+        color: #1e4a8a;
+      }
+
+      /* ========== ОСНОВНОЙ ХЕДЕР ========== */
+      .main-header {
+        background: white;
+        padding: 20px 0;
+        border-bottom: 1px solid #eef2f6;
+      }
+
+      .main-header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+
+      .logo img {
+        display: block;
+        height: 44px;
+        width: auto;
+      }
+
+      .header-contacts {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+
+      .contact-block {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .contact-block i {
+        font-size: 28px;
+        color: #1e4a8a;
+      }
+
+      .contact-info .label {
+        font-size: 13px;
+        color: #5b6e8c;
+        letter-spacing: 0.3px;
+      }
+
+      .contact-info a {
+        font-weight: 700;
+        font-size: 18px;
+        color: #0f2b4d;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .contact-info a:hover {
+        color: #2563eb;
+      }
+
+      /* ========== НАВИГАЦИЯ ========== */
+      .nav-menu {
+        background: white;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 1px 6px rgba(0, 0, 0, 0.02);
+        border-bottom: 1px solid #eef2f6;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(2px);
+        background-color: rgba(255, 255, 255, 0.98);
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        gap: 8px;
+        padding: 0;
+        margin: 0;
+      }
+
+      .nav-links li a {
+        display: inline-block;
+        padding: 16px 12px;
+        font-weight: 500;
+        font-size: 15px;
+        color: #1e2f44;
+        text-decoration: none;
+        transition: all 0.2s;
+        border-radius: 8px;
+      }
+
+      .nav-links li.active a,
+      .nav-links li a:hover {
+        color: #1e4a8a;
+        background-color: #f0f4fe;
+      }
+
+      .btn-online {
+        background: linear-gradient(105deg, #1e4a8a 0%, #2563eb 100%);
+        color: white !important;
+        padding: 8px 16px !important;
+        border-radius: 40px !important;
+        font-weight: 600 !important;
+        margin-left: 12px;
+        transition: transform 0.1s, box-shadow 0.2s;
+        box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+        margin-top: 8px;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .btn-online i {
+        margin-right: 8px;
+      }
+
+      .btn-online:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+      }
+
+      /* ========== ГЕРО-БЛОК ========== */
+      .hero-tax {
+        background: linear-gradient(135deg, #eef2ff 0%, #ffffff 100%);
+        padding: 48px 0 32px;
+        border-bottom: 1px solid #eef2f6;
+      }
+
+      .hero-content {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero-badge {
+        background: linear-gradient(135deg, #1e4a8a, #2563eb);
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 6px 16px;
+        border-radius: 40px;
+        display: inline-block;
+        margin-bottom: 24px;
+      }
+
+      .hero-content h1 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #0a2540;
+        margin-bottom: 16px;
+      }
+
+      .hero-content p {
+        font-size: 18px;
+        color: #475569;
+      }
+
+      /* ========== ОСНОВНОЙ КОНТЕНТ ========== */
+      .document-wrapper {
+        background: white;
+        border-radius: 24px;
+        margin: 40px 0 60px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+      }
+
+      .document-header {
+        background: #f8fafc;
+        padding: 24px 32px;
+        border-bottom: 1px solid #e2e8f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .document-header h2 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #0f2b4d;
+      }
+
+      .download-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: #2563eb;
+        color: white;
+        padding: 10px 24px;
+        border-radius: 40px;
+        font-weight: 500;
+        transition: 0.2s;
+      }
+
+      .download-btn:hover {
+        background: #1e4a8a;
+        transform: translateY(-2px);
+      }
+
+      .document-content {
+        padding: 40px 48px;
+        line-height: 1.7;
+        color: #1e293b;
+      }
+
+      .document-content h3 {
+        font-size: 24px;
+        font-weight: 600;
+        color: #0f2b4d;
+        margin: 28px 0 16px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #e2e8f0;
+      }
+
+      .document-content h4 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #1e4a8a;
+        margin: 20px 0 12px;
+      }
+
+      .document-content p {
+        margin-bottom: 16px;
+        font-size: 15px;
+      }
+
+      .document-content strong {
+        color: #0f2b4d;
+      }
+
+      .document-content ul,
+      .document-content ol {
+        margin: 12px 0 20px 24px;
+      }
+
+      .document-content li {
+        margin: 8px 0;
+        font-size: 15px;
+      }
+
+      .info-note {
+        background: #fef9e3;
+        border-left: 4px solid #e9c46a;
+        padding: 20px 24px;
+        margin: 24px 0;
+        border-radius: 12px;
+      }
+
+      .info-blue {
+        background: #eef2ff;
+        border-left: 4px solid #2563eb;
+        padding: 20px 24px;
+        margin: 24px 0;
+        border-radius: 12px;
+      }
+
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
+        margin: 32px 0;
+      }
+
+      .step-card {
+        background: #f8fafc;
+        border-radius: 20px;
+        padding: 24px;
+        text-align: center;
+        transition: 0.2s;
+      }
+      .step-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      }
+      .step-number {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #1e4a8a, #2563eb);
+        color: white;
+        font-size: 24px;
+        font-weight: 700;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+      }
+      .step-card h4 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      /* ========== МОДАЛЬНОЕ ОКНО (в стиле примера) ========== */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(15, 23, 42, 0.75);
+        backdrop-filter: blur(6px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0.3s ease, opacity 0.3s ease;
+      }
+
+      .modal-overlay.active {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .modal-container {
+        background: #ffffff;
+        max-width: 500px;
+        width: 90%;
+        border-radius: 40px;
+        box-shadow: 0 35px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
+        overflow: hidden;
+        transform: scale(0.96);
+        transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      }
+
+      .modal-overlay.active .modal-container {
+        transform: scale(1);
+      }
+
+      .modal-header {
+        background: linear-gradient(105deg, #1e4a8a, #2563eb);
+        padding: 28px 28px 20px;
+        color: white;
+        position: relative;
+      }
+      .modal-header h3 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        letter-spacing: -0.3px;
+      }
+      .modal-header p {
+        font-size: 15px;
+        opacity: 0.85;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .modal-close {
+        position: absolute;
+        right: 24px;
+        top: 24px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 60px;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 20px;
+        color: white;
+      }
+      .modal-close:hover {
+        background: rgba(255, 255, 255, 0.35);
+        transform: rotate(90deg);
+      }
+
+      .modal-body {
+        padding: 28px 28px 36px;
+      }
+      .form-group {
+        margin-bottom: 24px;
+      }
+      .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #1e2f44;
+        font-size: 14px;
+      }
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 14px 18px;
+        border-radius: 28px;
+        border: 1.5px solid #e2e8f0;
+        font-size: 16px;
+        transition: all 0.2s;
+        background: #fefefe;
+        font-family: inherit;
+      }
+      .form-group input:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+      }
+      .modal-submit {
+        background: linear-gradient(105deg, #1e4a8a, #2563eb);
+        border: none;
+        width: 100%;
+        padding: 16px;
+        border-radius: 44px;
+        font-weight: 700;
+        font-size: 18px;
+        color: white;
+        cursor: pointer;
+        transition: 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+      }
+      .modal-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(37, 99, 235, 0.4);
+      }
+      .modal-footer-note {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #5b6e8c;
+        text-align: center;
+      }
+
+      /* ========== ФУТЕР ========== */
+      .footer {
+        background: #0f172a;
+        color: #cbd5e1;
+        padding: 48px 0 32px;
+        margin-top: 40px;
+      }
+      .footer-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 48px;
+        justify-content: space-between;
+      }
+      .footer-col {
+        flex: 1;
+        min-width: 200px;
+      }
+      .footer-col h4 {
+        color: white;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+      }
+      .footer-links {
+        list-style: none;
+      }
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+      .footer-links a {
+        color: #94a3b8;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-links a:hover {
+        color: white;
+      }
+      .copyright {
+        text-align: center;
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid #1e293b;
+        font-size: 0.8rem;
+      }
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 28px;
+        }
+        .document-content {
+          padding: 24px;
+        }
+        .document-header {
+          padding: 16px 20px;
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Верхняя плашка -->
+    <div class="top-bar">
+      <div class="container">
+        <div class="top-contacts">
+          <a href="mailto:info@reamedalmet.ru"
+            ><i class="far fa-envelope"></i> info@reamedalmet.ru</a
+          >
+          <span><i class="far fa-clock"></i> Ежедневно с 8:00 до 20:00</span>
+        </div>
+        <div class="social-icons">
+          <a href="https://vk.com/reamedalmet" target="_blank"
+            ><i class="fab fa-vk"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Основной хедер -->
+    <header class="main-header">
+      <div class="container">
+        <a href="/" class="logo">
+          <img
+            src="https://reamedalmet.ru/wp-content/uploads/2023/11/logo-1.png"
+            alt="Реамед"
+            width="168"
+            height="44"
+          />
+        </a>
+        <div class="header-contacts">
+          <div class="contact-block">
+            <i class="fas fa-phone-alt"></i>
+            <div class="contact-info">
+              <div class="label">Прием врачей / Медосмотры</div>
+              <a href="tel:+78553399939">+7 (8553) 39-99-39</a>
+            </div>
+          </div>
+          <div class="contact-block">
+            <i class="fas fa-stethoscope"></i>
+            <div class="contact-info">
+              <div class="label">Наркология</div>
+              <a href="tel:+78553440404">+7 (8553) 44-04-04</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Навигация -->
+    <div class="nav-menu">
+      <div class="container">
+        <ul class="nav-links">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="./specialist.html">Специалисты</a></li>
+          <li><a href="./uslugi.html">Услуги</a></li>
+          <li><a href="./contact.html">Контакты</a></li>
+          <li><a href="./vacancy2.html">Вакансии</a></li>
+          <li>
+            <a href="#" class="btn-online" id="onlineAppointmentBtn"
+              ><i class="fas fa-calendar-check"></i> Онлайн-запись</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ГЕРО-СЕКЦИЯ -->
+    <div class="hero-tax">
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-badge"
+            ><i class="fas fa-file-invoice-dollar"></i> Верните 13% от стоимости
+            лечения</span
+          >
+          <h1>Справка для получения налогового вычета</h1>
+          <p>
+            Оформление документов для возврата НДФЛ за медицинские услуги.
+            Быстро, просто, законно.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="container">
+        <div class="document-wrapper">
+          <div class="document-header">
+            <h2>
+              <i class="fas fa-file-alt"></i> Справка об оплате медицинских
+              услуг
+            </h2>
+            <a
+              href="https://reamedalmet.ru/wp-content/uploads/2025/03/Заявление-на-справку-1.pdf"
+              class="download-btn"
+              target="_blank"
+            >
+              <i class="fas fa-download"></i> Скачать бланк заявления
+            </a>
+          </div>
+          <div class="document-content">
+            <div class="info-note">
+              <i
+                class="fas fa-info-circle"
+                style="color: #e9c46a; margin-right: 10px"
+              ></i>
+              <strong>Важно:</strong> Справка за медицинские услуги, полученные
+              и оплаченные в 2024 году, оформляется строго на основании
+              заявления налогоплательщика (супруга/супруги) в соответствии с
+              Приказом ФНС России от 08.11.2023 г. №ЕА-7-11/824@.
+            </div>
+
+            <h3>Как получить справку</h3>
+            <p>
+              Для того чтобы воспользоваться правом на возврат денежных средств,
+              потраченных на лечение (социальный налоговый вычет на лечение), вы
+              можете запросить у нас Справку об оказанных услугах.
+            </p>
+
+            <div class="steps-grid">
+              <div class="step-card">
+                <div class="step-number">1</div>
+                <h4>Обратиться лично</h4>
+                <p>
+                  Придите к администратору и заполните бланк заявления в любом
+                  филиале Клиники Реамед.
+                </p>
+              </div>
+              <div class="step-card">
+                <div class="step-number">2</div>
+                <h4>Скачать и заполнить</h4>
+                <p>
+                  Скачайте бланк заявления, заполните его и принесите в любой
+                  филиал или отправьте скан на электронную почту.
+                </p>
+              </div>
+              <div class="step-card">
+                <div class="step-number">3</div>
+                <h4>Получить справку</h4>
+                <p>
+                  Справка будет готова в течение 30 календарных дней после
+                  подачи заявления.
+                </p>
+              </div>
+            </div>
+
+            <h3>Способы получения справки</h3>
+            <ul>
+              <li>
+                <strong>При личном обращении</strong> налогоплательщика в
+                клинику
+              </li>
+              <li>
+                <strong>По почте РФ</strong> по письменному заявлению
+                налогоплательщика. Отправление справки осуществляется за счет
+                средств налогоплательщика (Решение Верховного Суда РФ от 23 мая
+                2012 г. №АКПИ12-487)
+              </li>
+            </ul>
+
+            <div class="info-blue">
+              <i
+                class="fas fa-user-check"
+                style="color: #2563eb; margin-right: 10px"
+              ></i>
+              <strong
+                >Справку может получить представитель налогоплательщика</strong
+              >, обладающий соответствующими полномочиями в силу закона на
+              основании нотариальной доверенности (Решение Верховного Суда РФ от
+              23 мая 2012 г. №АКПИ12-487).
+            </div>
+
+            <h3>Электронная почта для отправки заявления</h3>
+            <p>
+              Сканированную копию заявления можно отправить на электронный ящик:
+              <strong
+                ><a
+                  href="mailto:reamed.spravka@gmail.com"
+                  style="color: #2563eb"
+                  >reamed.spravka@gmail.com</a
+                ></strong
+              >
+            </p>
+
+            <h3>Сроки и порядок предоставления</h3>
+            <ul>
+              <li>
+                Справка предоставляется в течение
+                <strong>30 календарных дней</strong> после дня подачи заявления.
+              </li>
+              <li>
+                Порядок предоставления клиникой справки в электронном виде не
+                предусмотрен действующим законодательством РФ.
+              </li>
+            </ul>
+
+            <div class="info-note">
+              <i
+                class="fas fa-gavel"
+                style="color: #e9c46a; margin-right: 10px"
+              ></i>
+              <strong>Важно для налоговой декларации:</strong> В соответствии с
+              Письмом ФНС от 25.03.2022 г. № БС-4-11/3605 для получения
+              социального налогового вычета на лечение вместе с налоговой
+              декларацией 3-НДФЛ в качестве подтверждающего расходы документа
+              достаточно предоставить только Справку об оплате медицинских услуг
+              установленной формы, а в случае оплаты медицинских услуг за
+              близких родственников — копии документов, подтверждающих родство.
+            </div>
+
+            <h3>Какие документы нужны для получения справки</h3>
+            <ul>
+              <li>Паспорт налогоплательщика</li>
+              <li>
+                Документы, подтверждающие оплату медицинских услуг (чеки,
+                квитанции)
+              </li>
+              <li>
+                Заявление на выдачу справки (можно скачать по ссылке выше)
+              </li>
+              <li>
+                При оплате за родственников — документы, подтверждающие родство
+                (свидетельство о рождении, свидетельство о браке)
+              </li>
+            </ul>
+
+            <h3>Контакты для связи</h3>
+            <p>
+              По всем вопросам оформления справки для налогового вычета вы
+              можете обратиться:
+            </p>
+            <ul>
+              <li>По телефону: <strong>+7 (8553) 39-99-39</strong></li>
+              <li>
+                По электронной почте:
+                <strong
+                  ><a href="mailto:info@reamedalmet.ru" style="color: #2563eb"
+                    >info@reamedalmet.ru</a
+                  ></strong
+                >
+              </li>
+              <li>В регистратуре любого филиала клиники Реамед</li>
+            </ul>
+
+            <div class="info-blue">
+              <i
+                class="fas fa-percent"
+                style="color: #2563eb; margin-right: 10px"
+              ></i>
+              <strong>Размер налогового вычета:</strong> Вы можете вернуть до
+              13% от суммы, потраченной на лечение, но не более 15 600 рублей в
+              год (лимит 120 000 рублей). Для дорогостоящего лечения лимит не
+              установлен.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>ООО «Реамед»</h4>
+            <p>Лицензия Л041-01181-16/00344835 от 07.09.2020</p>
+            <p><i class="fas fa-phone-alt"></i> +7 (8553) 39-99-39</p>
+            <p><i class="far fa-envelope"></i> info@reamedalmet.ru</p>
+          </div>
+          <div class="footer-col">
+            <h4>Пациентам</h4>
+            <ul class="footer-links">
+              <li><a href="./oferta.html">Договор оферты</a></li>
+              <li><a href="./policy.html">Политика обработки данных</a></li>
+              <li><a href="./nalog.html">Налоговый вычет</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          2025 © ООО «Реамед». Все права защищены. Информация на сайте не
+          является публичной офертой.
+        </div>
+      </div>
+    </footer>
+
+    <!-- МОДАЛЬНОЕ ОКНО (красивое, в стиле примера) -->
+    <div class="modal-overlay" id="appointmentModal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <div class="modal-close" id="closeModalBtn"><i class="fas fa-times"></i></div>
+          <h3><i class="fas fa-calendar-check"></i> Запись на приём</h3>
+          <p><i class="fas fa-stethoscope"></i> <span id="modalServiceName">Онлайн-запись в клинику</span></p>
+        </div>
+        <div class="modal-body">
+          <form id="modalForm">
+            <div class="form-group">
+              <label>Ваше имя *</label>
+              <input type="text" id="userName" placeholder="Иван Иванов" required>
+            </div>
+            <div class="form-group">
+              <label>Телефон *</label>
+              <input type="tel" id="userPhone" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            <div class="form-group">
+              <label>Желаемая дата</label>
+              <input type="date" id="userDate">
+            </div>
+            <button type="submit" class="modal-submit">Отправить заявку <i class="fas fa-paper-plane"></i></button>
+            <div class="modal-footer-note">Нажимая «Отправить», вы соглашаетесь с политикой обработки данных. Администратор свяжется с вами в течение 15 минут.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Модальное окно
+      const modalOverlay = document.getElementById('appointmentModal');
+      const modalServiceSpan = document.getElementById('modalServiceName');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const onlineBtn = document.getElementById('onlineAppointmentBtn');
+
+      function openModal(serviceName = 'Онлайн-запись') {
+        modalServiceSpan.innerText = serviceName;
+        modalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      // Кнопка "Онлайн-запись" в меню
+      if (onlineBtn) {
+        onlineBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal('Запись на приём (налоговый вычет)');
+        });
+      }
+
+      // Закрытие модалки
+      if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+      modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal();
+      });
+
+      // Обработка формы внутри модалки
+      const modalForm = document.getElementById('modalForm');
+      modalForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('userName').value.trim();
+        const phone = document.getElementById('userPhone').value.trim();
+        const date = document.getElementById('userDate').value;
+        const service = modalServiceSpan.innerText;
+        if (!name || !phone) {
+          alert('Пожалуйста, заполните имя и номер телефона');
+          return;
+        }
+        alert(`Спасибо, ${name}! Ваша заявка на "${service}" принята. Мы свяжемся с вами по номеру ${phone} в ближайшее время.${date ? ` Предварительная дата: ${date}` : ''}`);
+        closeModal();
+        modalForm.reset();
+      });
+
+      // Плавная прокрутка к якорям (сохранена из исходного кода)
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (
+            href !== "#" &&
+            href !== "#onlineAppointmentBtn" &&
+            href !== "" &&
+            href !== "#"
+          ) {
+            const target = document.querySelector(href);
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: "smooth" });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
